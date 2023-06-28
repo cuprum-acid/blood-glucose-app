@@ -3,7 +3,7 @@
 
 
 ## Description
-The Glucose app is an Adroid mobile app for people with diabetes to control their blood sugar levels.
+The Glucose app is an Android mobile app for people with diabetes to control their blood sugar levels.
 The app allows to add blood sugar data and monitor one's condition on graphs.
 
 
