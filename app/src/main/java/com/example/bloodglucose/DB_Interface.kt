@@ -700,6 +700,7 @@ class Database private constructor(private val dbName: String) {
         return dailyTip
 
     }
+    //function to submit glucose
     fun submitGlucose (level: Double) {
         try {
             connection?.createStatement().use { stmt ->
@@ -719,7 +720,6 @@ class Database private constructor(private val dbName: String) {
         }
     }
 
-    //fun exportGlucose
     fun clearTodayLog() {
         val sqlForClearingTodayFood = "TRUNCATE TABLE daily_food"
         val sqlForClearingTodayExercises = "TRUNCATE TABLE daily_exercises"
