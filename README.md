@@ -10,3 +10,4 @@ The app allows to add blood sugar data and monitor one's condition on graphs.
 ## Contact
 If you have any questions, please contact 
 [e.bobkunov@innopolis.university](mailto:e.bobkunov@innopolis.university)
+## Team

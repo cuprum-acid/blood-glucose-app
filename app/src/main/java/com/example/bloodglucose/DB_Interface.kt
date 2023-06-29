@@ -5,6 +5,8 @@ import com.example.mytestapp.Tuple6
 import java.sql.Connection
 import java.sql.DriverManager
 import java.sql.SQLException
+import java.time.LocalDate
+import java.time.LocalTime
 import kotlin.random.Random
 
 class Database private constructor(private val dbName: String) {
@@ -698,6 +700,25 @@ class Database private constructor(private val dbName: String) {
         return dailyTip
 
     }
+    //function to submit glucose
+    fun submitGlucose (level: Double) {
+        try {
+            connection?.createStatement().use { stmt ->
+                val requestForInsertingNewRecord =
+                    "INSERT INTO glucose_records(date, time, level) VALUES(?,?, ?)"
+
+                connection?.prepareStatement(requestForInsertingNewRecord).use { pstmt ->
+                    pstmt?.setString(1, LocalDate.now().toString())
+                    pstmt?.setString(2, LocalTime.now().toString())
+                    pstmt?.setDouble(3, level)
+                    pstmt?.executeUpdate()
+                }
+            }
+        } catch (e: SQLException) {
+            println("Error while working with database")
+            e.printStackTrace()
+        }
+    }
 
     fun clearTodayLog() {
         val sqlForClearingTodayFood = "TRUNCATE TABLE daily_food"
@@ -705,7 +726,6 @@ class Database private constructor(private val dbName: String) {
         val sqlForClearingTodayMedications = "TRUNCATE TABLE daily_medications"
         // ToDO
     }
-
 
     fun close() {
         try {
