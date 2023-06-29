@@ -700,8 +700,9 @@ class Database private constructor(private val dbName: String) {
         return dailyTip
 
     }
+
     //function to submit glucose
-    fun submitGlucose (level: Double) {
+    fun submitGlucose(level: Double) {
         try {
             connection?.createStatement().use { stmt ->
                 val requestForInsertingNewRecord =
@@ -720,11 +721,25 @@ class Database private constructor(private val dbName: String) {
         }
     }
 
+    // Whenever new day starts this function clears log of eaten food/exercises/medications
     fun clearTodayLog() {
-        val sqlForClearingTodayFood = "TRUNCATE TABLE daily_food"
-        val sqlForClearingTodayExercises = "TRUNCATE TABLE daily_exercises"
-        val sqlForClearingTodayMedications = "TRUNCATE TABLE daily_medications"
-        // ToDO
+        val sqlForClearingTodayFood = "DELETE FROM daily_food"
+        val sqlForClearingTodayExercises = "DELETE FROM daily_exercises"
+        val sqlForClearingTodayMedications = "DELETE FROM daily_medications"
+        try {
+            connection?.prepareStatement(sqlForClearingTodayFood).use { pstmt ->
+                pstmt?.executeUpdate()
+            }
+            connection?.prepareStatement(sqlForClearingTodayExercises).use { pstmt ->
+                pstmt?.executeUpdate()
+            }
+            connection?.prepareStatement(sqlForClearingTodayMedications).use { pstmt ->
+                pstmt?.executeUpdate()
+            }
+        } catch (e: SQLException) {
+            println("Error while working with database")
+            e.printStackTrace()
+        }
     }
 
     fun close() {
@@ -748,7 +763,7 @@ class Database private constructor(private val dbName: String) {
 fun main() {
     val url = "jdbc:sqlite:DataBase.db"
     val db = Database.getInstance("app/src/main/java/com/example/bloodglucose/DataBase.db")
-    val res = db.getExercisesDoneToday()
+    val res = db.clearTodayLog()
     //val res  = db.getTipImage(2)
     //val res = db.insertSomeExercise("Crunches", "Power", 500)
     db.close()
