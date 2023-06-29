@@ -1,0 +1,340 @@
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ScrollView
+        android:id="@+id/list_pr"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/content_container_list_pr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+
+            <RelativeLayout
+                android:id="@+id/page_list_pr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp">
+
+                <View
+                    android:id="@+id/b_list_pr"
+                    android:layout_width="410dp"
+                    android:layout_height="730dp"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@drawable/screen" />
+
+
+                <View
+                    android:id="@+id/rectangle_or_list_pr"
+                    android:layout_width="311dp"
+                    android:layout_height="112dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="85dp"
+                    android:background="@drawable/orange_rectangle" />
+
+                <RelativeLayout
+                    android:id="@+id/button_dairy_list_pr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="230dp">
+
+
+                    <RelativeLayout
+                        android:id="@+id/state_layer_dairy_list_pr"
+                        android:layout_width="311dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="0dp"
+                        android:background="@drawable/grey_rectangle">
+
+                        <TextView
+                            android:id="@+id/label_text_dairy_list_pr"
+                            android:layout_width="189dp"
+                            android:layout_height="46dp"
+                            android:layout_centerInParent="true"
+                            android:layout_gravity="center_horizontal|center"
+                            android:layout_marginLeft="60.5dp"
+                            android:layout_marginTop="9.5dp"
+                            android:gravity="center"
+                            android:text="@string/string_dairy_pr"
+                            android:textColor="@color/color_text"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/button_m_and_f_list_pr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="310dp">
+
+
+                    <RelativeLayout
+                        android:id="@+id/state_layer_m_and_f_list_pr"
+                        android:layout_width="311dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="false"
+                        android:layout_marginStart="0dp"
+                        android:background="@drawable/grey_rectangle">
+
+                        <TextView
+                            android:id="@+id/label_text_m_and_f_list_pr"
+                            android:layout_width="175dp"
+                            android:layout_height="46dp"
+                            android:layout_centerInParent="true"
+                            android:layout_gravity="center_horizontal|center"
+                            android:layout_marginLeft="67.5dp"
+                            android:layout_marginTop="9.5dp"
+                            android:gravity="center"
+                            android:text="@string/string_m_and_f"
+                            android:textColor="@color/color_text"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/button_v_and_f_list_pr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="390dp">
+
+
+                    <RelativeLayout
+                        android:id="@+id/state_layer_v_and_f_list_pr"
+                        android:layout_width="311dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="0dp"
+                        android:background="@drawable/grey_rectangle">
+
+                        <TextView
+                            android:id="@+id/label_text_v_and_f_list_pr"
+                            android:layout_width="266dp"
+                            android:layout_height="46dp"
+                            android:layout_centerInParent="true"
+                            android:layout_gravity="center_horizontal|center"
+                            android:layout_marginLeft="22dp"
+                            android:layout_marginTop="9.5dp"
+                            android:gravity="center"
+                            android:text="@string/string_veg_and_fruits"
+                            android:textColor="@color/color_text"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/button_grocery_list_pr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="470dp">
+
+
+                    <RelativeLayout
+                        android:id="@+id/state_layer_grocery_list_pr"
+                        android:layout_width="311dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="0dp"
+                        android:background="@drawable/grey_rectangle">
+
+                        <TextView
+                            android:id="@+id/label_text_grocery_list_pr"
+                            android:layout_width="111dp"
+                            android:layout_height="46dp"
+                            android:layout_centerInParent="true"
+                            android:layout_gravity="center_horizontal|center"
+                            android:layout_marginLeft="99.5dp"
+                            android:layout_marginTop="9.5dp"
+                            android:gravity="center"
+                            android:text="@string/string_grocery"
+                            android:textColor="@color/color_text"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/button_p_and_s_list_pr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="550dp">
+
+
+                    <RelativeLayout
+                        android:id="@+id/state_layer_p_and_s_list_pr"
+                        android:layout_width="311dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="0dp"
+                        android:background="@drawable/grey_rectangle">
+
+                        <TextView
+                            android:id="@+id/label_text_p_and_s_list_pr"
+                            android:layout_width="251dp"
+                            android:layout_height="46dp"
+                            android:layout_centerInParent="true"
+                            android:layout_gravity="center_horizontal|center"
+                            android:layout_marginLeft="29.5dp"
+                            android:layout_marginTop="9.5dp"
+                            android:gravity="center"
+                            android:text="@string/string_pastries_and_sweets"
+                            android:textColor="@color/color_text"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/button_next_list_pr"
+                    android:layout_width="130dp"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="222dp"
+                    android:layout_marginLeft="255dp"
+                    android:layout_marginTop="640dp">
+
+
+                    <RelativeLayout
+                        android:id="@+id/state_layer_next_list_pr"
+                        android:layout_width="130dp"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="0dp"
+                        android:background="@drawable/orange_rectangle">
+
+                        <TextView
+                            android:id="@+id/label_text_next_list_pr"
+                            android:layout_width="67dp"
+                            android:layout_height="37dp"
+                            android:layout_centerInParent="true"
+                            android:layout_gravity="center_horizontal|center"
+                            android:layout_marginLeft="31dp"
+                            android:layout_marginTop="14dp"
+                            android:gravity="center"
+                            android:text="@string/string_next"
+                            android:textColor="@color/color_text"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/button_plus_list_pr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="640dp"
+                    android:background="@drawable/orange_rectangle">
+
+
+                    <RelativeLayout
+                        android:id="@+id/state_layer_plus_list_pr"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp">
+
+                        <TextView
+                            android:id="@+id/label_text_plus_list_pr"
+                            android:layout_width="46dp"
+                            android:layout_height="48dp"
+                            android:layout_centerInParent="true"
+                            android:layout_gravity="center_horizontal|center"
+                            android:layout_marginLeft="6.5dp"
+                            android:layout_marginTop="0dp"
+                            android:gravity="center"
+                            android:text="@string/string_plus"
+                            android:textColor="@color/color_text"
+                            android:textSize="40sp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/button_home_list_pr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="29dp">
+
+
+                    <RelativeLayout
+                        android:id="@+id/state_layer_home_list_pr"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:background="@drawable/grey_rectangle">
+
+                        <TextView
+                            android:id="@+id/label_text_home_list_pr"
+                            android:layout_width="80dp"
+                            android:layout_height="37dp"
+                            android:layout_centerInParent="true"
+                            android:layout_gravity="center_horizontal|center"
+                            android:layout_marginLeft="12dp"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="@string/string_home"
+                            android:textColor="@color/color_text"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/string_list_pr"
+                    android:layout_width="222dp"
+                    android:layout_height="128dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_horizontal|center"
+                    android:layout_marginLeft="77dp"
+                    android:layout_marginTop="75dp"
+                    android:gravity="center"
+                    android:text="@string/string_list_prod"
+                    android:textColor="@color/color_text"
+                    android:textSize="36sp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+    </ScrollView>
+</HorizontalScrollView>

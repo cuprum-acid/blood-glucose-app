@@ -1,0 +1,97 @@
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ScrollView
+        android:id="@+id/android_large_1"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/content_container_android_large_1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <RelativeLayout
+                android:id="@+id/page_android_large_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp">
+
+                <View
+                    android:id="@+id/b_android_large_1"
+                    android:layout_width="410dp"
+                    android:layout_height="730dp"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@drawable/screen" />
+
+                <View
+                    android:id="@+id/ellipse_1_android_large_1"
+                    android:layout_width="86dp"
+                    android:layout_height="87dp"
+                    android:layout_marginStart="55dp"
+                    android:layout_marginTop="327dp"
+                    android:background="@drawable/ellipse_orange" />
+
+                <View
+                    android:id="@+id/ellipse_2_android_large_1"
+                    android:layout_width="50dp"
+                    android:layout_height="51dp"
+                    android:layout_marginStart="155dp"
+                    android:layout_marginTop="432dp"
+                    android:background="@drawable/ellipse_orange" />
+
+                <View
+                    android:id="@+id/ellipse_3_android_large_1"
+                    android:layout_width="76dp"
+                    android:layout_height="78dp"
+                    android:layout_marginStart="55dp"
+                    android:layout_marginTop="590dp"
+                    android:background="@drawable/ellipse_orange" />
+
+
+                <RelativeLayout
+                    android:id="@+id/button_glucoze_android_large_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="118dp">
+
+
+                    <RelativeLayout
+                        android:id="@+id/state_layer_glucoze_android_large_1"
+                        android:layout_width="300dp"
+                        android:layout_height="100dp"
+
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginLeft="30dp"
+                        android:background="@drawable/orange_rectangle">
+
+                        <TextView
+                            android:id="@+id/label_text_glucoze_android_large_1"
+                            android:layout_width="226dp"
+                            android:layout_height="48dp"
+                            android:layout_centerInParent="true"
+                            android:layout_gravity="center_horizontal|center"
+                            android:layout_marginLeft="48dp"
+                            android:layout_marginTop="41dp"
+                            android:gravity="center"
+                            android:text="@string/string_glucoze_1"
+                            android:textColor="@color/screen_background"
+                            android:textSize="40sp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+    </ScrollView>
+</HorizontalScrollView>

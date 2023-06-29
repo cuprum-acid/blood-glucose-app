@@ -1,0 +1,272 @@
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    -->
+
+    <ScrollView
+        android:id="@+id/list_med"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/content_container_list_med"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+
+            <RelativeLayout
+                android:id="@+id/page_list_med"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp">
+
+                <View
+                    android:id="@+id/b_list_med"
+                    android:layout_width="410dp"
+                    android:layout_height="730dp"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@drawable/screen" />
+
+                <View
+                    android:id="@+id/rectangle_or_list_med"
+                    android:layout_width="311dp"
+                    android:layout_height="112dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="85dp"
+                    android:background="@drawable/orange_rectangle" />
+
+
+                <RelativeLayout
+                    android:id="@+id/button_pills_list_med"
+                    android:layout_width="300dp"
+                    android:layout_height="130dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="29dp"
+                    android:layout_marginTop="250dp">
+
+
+                    <RelativeLayout
+                        android:id="@+id/state_layer_pills_list_med"
+                        android:layout_width="300dp"
+                        android:layout_height="130dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:background="@drawable/grey_rectangle">
+
+                        <TextView
+                            android:id="@+id/label_text_pills_list_med"
+                            android:layout_width="85dp"
+                            android:layout_height="61dp"
+                            android:layout_centerInParent="true"
+                            android:layout_gravity="center_horizontal|center"
+                            android:layout_marginLeft="113.5dp"
+                            android:layout_marginTop="56dp"
+                            android:gravity="center"
+                            android:text="@string/string_pills"
+                            android:textColor="@color/color_text"
+                            android:textSize="32sp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/button_insulin_list_med"
+                    android:layout_width="300dp"
+                    android:layout_height="130dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="29dp"
+                    android:layout_marginTop="440dp">
+
+
+                    <RelativeLayout
+                        android:id="@+id/state_layer_insulin_list_med"
+                        android:layout_width="300dp"
+                        android:layout_height="130dp"
+                        android:layout_marginStart="0dp"
+                        android:background="@drawable/grey_rectangle">
+
+                        <TextView
+                            android:id="@+id/label_text_insulin_list_med"
+                            android:layout_width="246dp"
+                            android:layout_height="61dp"
+                            android:layout_centerInParent="true"
+                            android:layout_gravity="center_horizontal|center"
+                            android:layout_marginLeft="33dp"
+                            android:layout_marginTop="0.5dp"
+                            android:gravity="center"
+                            android:text="@string/string_insulin"
+                            android:textColor="@color/color_text"
+                            android:textSize="32sp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/button_next_list_med"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="222dp"
+                    android:layout_marginLeft="255dp"
+                    android:layout_marginTop="640dp">
+
+
+                    <RelativeLayout
+                        android:id="@+id/state_layer_next_list_med"
+                        android:layout_width="130dp"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="0dp"
+                        android:background="@drawable/orange_rectangle">
+
+                        <TextView
+                            android:id="@+id/label_text_next_list_med"
+                            android:layout_width="67dp"
+                            android:layout_height="37dp"
+                            android:layout_centerInParent="true"
+                            android:layout_gravity="center_horizontal|center"
+                            android:layout_marginLeft="31dp"
+                            android:layout_marginTop="14dp"
+                            android:gravity="center"
+                            android:text="@string/string_next"
+                            android:textColor="@color/color_text"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/button_plus_list_med"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="640dp"
+                    android:background="@drawable/orange_rectangle">
+
+
+                    <RelativeLayout
+                        android:id="@+id/state_layer_plus_list_med"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp">
+
+                        <TextView
+                            android:id="@+id/label_text_plus_list_med"
+                            android:layout_width="46dp"
+                            android:layout_height="48dp"
+                            android:layout_centerInParent="true"
+                            android:layout_gravity="center_horizontal|center"
+                            android:layout_marginLeft="6.5dp"
+                            android:layout_marginTop="0dp"
+                            android:gravity="center"
+                            android:text="@string/string_plus"
+                            android:textColor="@color/color_text"
+                            android:textSize="40sp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/button_home_list_med"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="29dp">
+
+
+                    <RelativeLayout
+                        android:id="@+id/state_layer_home_list_med"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:background="@drawable/grey_rectangle">
+
+                        <TextView
+                            android:id="@+id/label_text_home_list_med"
+                            android:layout_width="80dp"
+                            android:layout_height="37dp"
+                            android:layout_centerInParent="true"
+                            android:layout_gravity="center_horizontal|center"
+                            android:layout_marginLeft="12dp"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="@string/string_home"
+                            android:textColor="@color/color_text"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/string_list_med"
+                    android:layout_width="222dp"
+                    android:layout_height="128dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_horizontal|center"
+                    android:layout_marginLeft="77dp"
+                    android:layout_marginTop="75dp"
+                    android:gravity="center"
+                    android:text="@string/string_list_med"
+                    android:textColor="@color/color_text"
+                    android:textSize="36sp"
+                    android:textStyle="bold" />
+
+
+                <RelativeLayout
+                    android:id="@+id/button_back_list_med"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="29dp"
+                    android:layout_marginTop="640dp">
+
+
+                    <RelativeLayout
+                        android:id="@+id/state_layer_back_list_med"
+                        android:layout_width="130dp"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="0dp"
+                        android:background="@drawable/orange_rectangle">
+
+                        <TextView
+                            android:id="@+id/label_text_back_list_med"
+                            android:layout_width="73dp"
+                            android:layout_height="37dp"
+                            android:layout_centerInParent="true"
+                            android:layout_gravity="center_horizontal|center"
+                            android:layout_marginLeft="19.5dp"
+                            android:layout_marginTop="14dp"
+                            android:gravity="center"
+                            android:text="@string/string_back"
+                            android:textColor="@color/color_text"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+    </ScrollView>
+</HorizontalScrollView>
