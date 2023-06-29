@@ -1,0 +1,139 @@
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ScrollView
+        android:id="@+id/advice"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/content_container_advice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+
+            <RelativeLayout
+                android:id="@+id/page_advice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp">
+
+                <View
+                    android:id="@+id/b_adice"
+                    android:layout_width="410dp"
+                    android:layout_height="730dp"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@drawable/screen" />
+
+                <View
+                    android:id="@+id/rectangle_or_adivce"
+                    android:layout_width="311dp"
+                    android:layout_height="112dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="85dp"
+                    android:background="@drawable/orange_rectangle" />
+
+                <TextView
+                    android:id="@+id/string_adivce"
+                    android:layout_width="222dp"
+                    android:layout_height="128dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_horizontal|center"
+                    android:layout_marginLeft="77dp"
+                    android:layout_marginTop="75dp"
+                    android:gravity="center"
+                    android:text="@string/string_advice"
+                    android:textColor="@color/color_text"
+                    android:textSize="36sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:id="@+id/rectangle_text_adivce"
+                    android:layout_width="311dp"
+                    android:layout_height="400dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="21dp"
+                    android:layout_marginTop="230dp"
+                    android:background="@drawable/grey_rectangle" />
+
+
+                <RelativeLayout
+                    android:id="@+id/button_back_adivce"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="96dp"
+                    android:layout_marginTop="665dp">
+
+
+                    <RelativeLayout
+                        android:id="@+id/state_layer_back_adivce"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:background="@drawable/orange_rectangle">
+
+                        <TextView
+                            android:id="@+id/label_text_back_adivce"
+                            android:layout_width="133dp"
+                            android:layout_height="37dp"
+                            android:layout_centerInParent="true"
+                            android:layout_gravity="center_horizontal|center"
+                            android:layout_marginLeft="21.5dp"
+                            android:layout_marginTop="14dp"
+                            android:gravity="center"
+                            android:text="@string/string_back"
+                            android:textColor="@color/color_text"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/button_home_adivce"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="29dp">
+
+
+                    <RelativeLayout
+                        android:id="@+id/state_layer_home_adivce"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:background="@drawable/grey_rectangle">
+
+                        <TextView
+                            android:id="@+id/label_text_home_adivce"
+                            android:layout_width="80dp"
+                            android:layout_height="37dp"
+                            android:layout_centerInParent="true"
+                            android:layout_gravity="center_horizontal|center"
+                            android:layout_marginLeft="12dp"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="@string/string_home"
+                            android:textColor="@color/color_text"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+    </ScrollView>
+</HorizontalScrollView>

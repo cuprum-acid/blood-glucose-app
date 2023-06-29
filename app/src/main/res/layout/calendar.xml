@@ -1,0 +1,169 @@
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ScrollView
+        android:id="@+id/calendar"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/content_container_calendar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+
+            <RelativeLayout
+                android:id="@+id/page_calendar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp">
+
+                <View
+                    android:id="@+id/bg_calendar"
+                    android:layout_width="410dp"
+                    android:layout_height="730dp"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@drawable/screen" />
+
+                <View
+                    android:id="@+id/rectangle_or_calendar"
+                    android:layout_width="311dp"
+                    android:layout_height="112dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="85dp"
+                    android:background="@drawable/orange_rectangle" />
+
+
+                <RelativeLayout
+                    android:id="@+id/button_home_calendar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="29dp">
+
+
+                    <RelativeLayout
+                        android:id="@+id/state_layer_home_calendar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:background="@drawable/grey_rectangle">
+
+                        <TextView
+                            android:id="@+id/label_text_home_calendar"
+                            android:layout_width="80dp"
+                            android:layout_height="37dp"
+                            android:layout_centerInParent="true"
+                            android:layout_gravity="center_horizontal|center"
+                            android:layout_marginLeft="12dp"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="@string/string_home"
+                            android:textColor="@color/color_text"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/sting_calendar"
+                    android:layout_width="222dp"
+                    android:layout_height="128dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_horizontal|center"
+                    android:layout_marginLeft="77dp"
+                    android:layout_marginTop="75dp"
+                    android:gravity="center"
+                    android:text="@string/string_calendar"
+                    android:textColor="@color/color_text"
+                    android:textSize="36sp"
+                    android:textStyle="bold" />
+
+
+                <View
+                    android:id="@+id/rectangle_beige_calendar"
+                    android:layout_width="320dp"
+                    android:layout_height="320dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="21dp"
+                    android:layout_marginTop="370dp"
+                    android:background="@drawable/beige_rectangle" />
+
+
+                <CalendarView
+                    android:id="@+id/calendarView_calendar"
+                    android:layout_width="320dp"
+                    android:layout_height="320dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="21dp"
+                    android:layout_marginTop="370dp"
+                    android:onClick="onClick"
+                     />
+
+                <View   android:id="@+id/ellipse_hight_calendar"
+                    android:background="@drawable/ellipse_hight_level"
+                    android:layout_marginStart="39dp"
+                    android:layout_marginTop="230dp"
+                    android:layout_width="23dp"
+                    android:layout_height="23dp" />
+
+                <TextView android:id="@+id/sugar_level_high_calendar"
+                    android:textStyle="bold"
+                    android:textSize="24sp"
+                    android:textColor="@color/color_text"
+                    android:layout_marginLeft="74dp"
+                    android:layout_marginTop="225dp"
+                    android:layout_width="335dp"
+                    android:layout_height="35dp"
+                    android:text="@string/string_sugar_level_high"
+                    />
+
+                <View   android:id="@+id/ellipse_normal_calendar"
+                    android:background="@drawable/ellipse_normal_level"
+                    android:layout_marginStart="39dp"
+                    android:layout_marginTop="275dp"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp" />
+
+                <View   android:id="@+id/ellipse_low_calendar"
+                    android:background="@drawable/ellipse_low_level"
+                    android:layout_marginStart="39dp"
+                    android:layout_marginTop="320dp"
+                    android:layout_width="23dp"
+                    android:layout_height="23dp" />
+
+                <TextView android:id="@+id/normal_sugar_level_calendar"
+                    android:textStyle="bold"
+                    android:textSize="24sp"
+                    android:textColor="@color/color_text"
+                    android:layout_marginLeft="74dp"
+                    android:layout_marginTop="270dp"
+                    android:layout_width="335dp"
+                    android:layout_height="35dp"
+                    android:text="@string/string_normal_sugar_level"
+                    />
+
+                <TextView android:id="@+id/sugar_levels_low_calendar"
+                    android:textStyle="bold"
+                    android:textSize="24sp"
+                    android:textColor="@color/color_text"
+                    android:layout_marginLeft="74dp"
+                    android:layout_marginTop="315dp"
+                    android:layout_width="307dp"
+                    android:layout_height="38dp"
+                    android:text="@string/string_sugar_levels_low"
+                    />
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+    </ScrollView>
+</HorizontalScrollView>
