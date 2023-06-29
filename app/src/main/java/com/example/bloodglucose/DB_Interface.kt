@@ -718,6 +718,8 @@ class Database private constructor(private val dbName: String) {
             e.printStackTrace()
         }
     }
+
+    //fun exportGlucose
     fun clearTodayLog() {
         val sqlForClearingTodayFood = "TRUNCATE TABLE daily_food"
         val sqlForClearingTodayExercises = "TRUNCATE TABLE daily_exercises"
