@@ -722,10 +722,23 @@ class Database private constructor(private val dbName: String) {
     }
 
     fun clearTodayLog() {
-        val sqlForClearingTodayFood = "TRUNCATE TABLE daily_food"
-        val sqlForClearingTodayExercises = "TRUNCATE TABLE daily_exercises"
-        val sqlForClearingTodayMedications = "TRUNCATE TABLE daily_medications"
-        // ToDO
+        val sqlForClearingTodayFood = "DELETE FROM daily_food"
+        val sqlForClearingTodayExercises = "DELETE FROM daily_exercises"
+        val sqlForClearingTodayMedications = "DELETE FROM daily_medications"
+        try {
+            connection?.prepareStatement(sqlForClearingTodayFood).use { pstmt ->
+                pstmt?.executeUpdate()
+            }
+            connection?.prepareStatement(sqlForClearingTodayExercises).use { pstmt ->
+                pstmt?.executeUpdate()
+            }
+            connection?.prepareStatement(sqlForClearingTodayMedications).use { pstmt ->
+                pstmt?.executeUpdate()
+            }
+        } catch (e: SQLException) {
+            println("Error while working with database")
+            e.printStackTrace()
+        }
     }
 
 
