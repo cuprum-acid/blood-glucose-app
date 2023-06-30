@@ -700,8 +700,9 @@ class Database private constructor(private val dbName: String) {
         return dailyTip
 
     }
+
     //function to submit glucose
-    fun submitGlucose (level: Double) {
+    fun submitGlucose(level: Double) {
         try {
             connection?.createStatement().use { stmt ->
                 val requestForInsertingNewRecord =
@@ -721,10 +722,50 @@ class Database private constructor(private val dbName: String) {
     }
 
     fun clearTodayLog() {
-        val sqlForClearingTodayFood = "TRUNCATE TABLE daily_food"
-        val sqlForClearingTodayExercises = "TRUNCATE TABLE daily_exercises"
-        val sqlForClearingTodayMedications = "TRUNCATE TABLE daily_medications"
-        // ToDO
+        val sqlForClearingTodayFood = "DELETE FROM daily_food"
+        val sqlForClearingTodayExercises = "DELETE FROM daily_exercises"
+        val sqlForClearingTodayMedications = "DELETE FROM daily_medications"
+        try {
+            connection?.prepareStatement(sqlForClearingTodayFood).use { pstmt ->
+                pstmt?.executeUpdate()
+            }
+            connection?.prepareStatement(sqlForClearingTodayExercises).use { pstmt ->
+                pstmt?.executeUpdate()
+            }
+            connection?.prepareStatement(sqlForClearingTodayMedications).use { pstmt ->
+                pstmt?.executeUpdate()
+            }
+        } catch (e: SQLException) {
+            println("Error while working with database")
+            e.printStackTrace()
+        }
+    }
+
+
+    fun exportGlucose(): List<Triple<String, String, Double>> {
+        val glucose = mutableListOf<Triple<String, String, Double>>()
+        val date: String = LocalDate.now().toString()
+        val requestTodayGlucose = "SELECT * FROM glucose_records WHERE date = ?"
+        try {
+            connection?.prepareStatement(requestTodayGlucose).use { stmt ->
+                stmt?.executeQuery().use { rs ->
+                    while (rs?.next() == true) {
+                        val glucoseItem = Triple<String, String, Double>(
+                            date,
+                            rs.getString("time"),
+                            rs.getDouble("level")
+
+                        )
+                        glucose.add(glucoseItem)
+                    }
+                }
+            }
+        } catch (e: SQLException) {
+            println("Error while working with database")
+            e.printStackTrace()
+        }
+        return glucose
+
     }
 
     fun close() {
