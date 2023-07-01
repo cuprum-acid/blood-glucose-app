@@ -43,7 +43,7 @@
     <string name="string_add_med">Add medications</string>
     <string name="string_add_exer">Add exercises</string>
     <string name="string_add_pr">Add products</string>
-    <string name="string_gl_level">Glucoze level</string>
+    <string name="string_gl_level">Glucose level</string>
     <string name="string_input">Input</string>
     <string name="string_title">Title </string>
     <string name="string_carbohydrates">Number of carbohydrates</string>
@@ -54,7 +54,7 @@
     <string name="string_sugar_level_high">sugar level are high </string>
     <string name="string_normal_sugar_level">normal sugar level </string>
     <string name="string_sugar_levels_low">sugar levels are low</string>
-    <string name="string_submit_doctor">Submit to the doctor</string>
+    <string name="string_export">Export</string>
     <string-array name="add_med">
         <item>Pills</item>
         <item>Insulin syringe</item>
