@@ -13,6 +13,11 @@
         android:theme="@style/Theme.BloodGlucose"
         tools:targetApi="31">
         <activity android:name=".ProfileActivity"></activity>
+        <activity android:name=".SugarGraphActivity"></activity>
+        <activity android:name=".TodayActivity"></activity>
+        <activity android:name=".CalendarActivity"></activity>
+        <activity android:name=".GlucoseActivity"></activity>
+        <activity android:name=".ProductActivity"></activity>
         <activity
             android:name=".MainActivity"
             android:exported="true">
