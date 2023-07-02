@@ -1,304 +1,199 @@
-<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/screen_background">
 
-    <ScrollView
-        android:id="@+id/profile"
+    <View
+        android:id="@+id/rectangle_or_profile"
+        android:layout_width="311dp"
+        android:layout_height="102dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/orange_rectangle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.103" />
+
+    <TextView
+        android:id="@+id/string_profile"
+        android:layout_width="268dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal|center"
+        android:gravity="center"
+        android:text="@string/string_profile"
+        android:textColor="@color/color_text"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.103" />
+
+    <View
+        android:id="@+id/rectangle_sugar_level_profile"
+        android:layout_width="315dp"
+        android:layout_height="66dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/beige_rectangle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rectangle_or_profile" />
+
+    <View
+        android:id="@+id/rectangle_today_profile"
+        android:layout_width="315dp"
+        android:layout_height="66dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/beige_rectangle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rectangle_sugar_level_profile" />
+
+    <View
+        android:id="@+id/rectangle_calendar_profile"
+        android:layout_width="315dp"
+        android:layout_height="66dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/beige_rectangle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rectangle_today_profile" />
+
+    <TextView
+        android:id="@+id/string_today_profile"
+        android:layout_width="191dp"
+        android:layout_height="51dp"
+        android:layout_gravity="center_horizontal|center"
+        android:layout_marginEnd="100dp"
+        android:gravity="center"
+        android:text="@string/string_today"
+        android:textColor="@color/color_text"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangle_sugar_level_profile"
+        app:layout_constraintEnd_toEndOf="@+id/rectangle_sugar_level_profile"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_sugar_level_profile"
+        app:layout_constraintTop_toTopOf="@+id/rectangle_sugar_level_profile" />
+
+    <TextView
+        android:id="@+id/string_sugar_level_graph_profile"
+        android:layout_width="205dp"
+        android:layout_height="35dp"
+        android:layout_gravity="center_horizontal|center"
+        android:layout_marginEnd="150dp"
+        android:gravity="center"
+        android:text="@string/string_graph"
+        android:textColor="@color/color_text"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangle_today_profile"
+        app:layout_constraintEnd_toEndOf="@+id/rectangle_today_profile"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_today_profile"
+        app:layout_constraintTop_toTopOf="@+id/rectangle_today_profile" />
+
+    <TextView
+        android:id="@+id/string_calendar_profile"
+        android:layout_width="173dp"
+        android:layout_height="54dp"
+        android:layout_gravity="center_horizontal|center"
+        android:layout_marginEnd="100dp"
+        android:gravity="center"
+        android:text="@string/string_calendar"
+        android:textColor="@color/color_text"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangle_calendar_profile"
+        app:layout_constraintEnd_toEndOf="@+id/rectangle_calendar_profile"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_calendar_profile"
+        app:layout_constraintTop_toTopOf="@+id/rectangle_calendar_profile" />
+
+    <Button
+        android:id="@+id/button_today_profile"
+        style="@style/Base.Theme.BloodGlucose"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:background="@drawable/orange_rectangle"
+        android:text="@string/string_go"
+        android:textColor="@color/color_text"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangle_sugar_level_profile"
+        app:layout_constraintEnd_toEndOf="@+id/rectangle_sugar_level_profile"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toEndOf="@+id/string_today_profile"
+        app:layout_constraintTop_toTopOf="@+id/rectangle_sugar_level_profile" />
 
-        <RelativeLayout
-            android:id="@+id/content_container_profile"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+    <Button
+        android:id="@+id/button_sugar_level_profile"
+        style="@style/Base.Theme.BloodGlucose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/orange_rectangle"
+        android:text="@string/string_go"
+        android:textColor="@color/color_text"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangle_today_profile"
+        app:layout_constraintEnd_toEndOf="@+id/rectangle_today_profile"
+        app:layout_constraintStart_toEndOf="@+id/string_sugar_level_graph_profile"
+        app:layout_constraintTop_toTopOf="@+id/rectangle_today_profile" />
 
+    <Button
+        android:id="@+id/button_calendar_profile"
+        style="@style/Base.Theme.BloodGlucose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/orange_rectangle"
+        android:text="@string/string_go"
+        android:textColor="@color/color_text"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangle_calendar_profile"
+        app:layout_constraintEnd_toEndOf="@+id/rectangle_calendar_profile"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toEndOf="@+id/string_calendar_profile"
+        app:layout_constraintTop_toTopOf="@+id/rectangle_calendar_profile" />
 
-            <RelativeLayout
-                android:id="@+id/page_profile"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="0dp"
-                android:layout_marginTop="0dp">
+    <Button
+        android:id="@+id/button_glucose_profile"
+        style="@style/Base.Theme.BloodGlucose"
+        android:layout_width="315dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/orange_rectangle"
+        android:text="@string/string_glucoze"
+        android:textColor="@color/color_text"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/button_lst_profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rectangle_calendar_profile" />
 
-                <View
-                    android:id="@+id/b_profile"
-                    android:layout_width="410dp"
-                    android:layout_height="730dp"
-                    android:layout_marginStart="0dp"
-                    android:layout_marginTop="0dp"
-                    android:background="@drawable/screen" />
+    <Button
+        android:id="@+id/button_lst_profile"
+        style="@style/Base.Theme.BloodGlucose"
+        android:layout_width="315dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/orange_rectangle"
+        android:text="@string/string_list_day"
+        android:textColor="@color/color_text"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_glucose_profile" />
 
-                <View
-                    android:id="@+id/rectangle_or_profile"
-                    android:layout_width="311dp"
-                    android:layout_height="102dp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginStart="25dp"
-                    android:layout_marginTop="70dp"
-                    android:background="@drawable/orange_rectangle" />
-
-                <TextView
-                    android:id="@+id/string_profile"
-                    android:layout_width="269dp"
-                    android:layout_height="106dp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_gravity="center_horizontal|center"
-                    android:layout_marginLeft="51dp"
-                    android:layout_marginTop="70dp"
-                    android:gravity="center"
-                    android:text="@string/string_profile"
-                    android:textColor="@color/color_text"
-                    android:textSize="40sp"
-                    android:textStyle="bold" />
-
-                <View
-                    android:id="@+id/rectangle_today_profile"
-                    android:layout_width="315dp"
-                    android:layout_height="66dp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginStart="25dp"
-                    android:layout_marginTop="250dp"
-                    android:background="@drawable/beige_rectangle" />
-
-                <View
-                    android:id="@+id/rectangle_sugar_level_profile"
-                    android:layout_width="315dp"
-                    android:layout_height="66dp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginStart="25dp"
-                    android:layout_marginTop="350dp"
-                    android:background="@drawable/beige_rectangle" />
-
-                <View
-                    android:id="@+id/rectangle_calendar_profile"
-                    android:layout_width="315dp"
-                    android:layout_height="66dp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginStart="25dp"
-                    android:layout_marginTop="450dp"
-                    android:background="@drawable/beige_rectangle" />
-
-                <TextView
-                    android:id="@+id/string_today_profile"
-                    android:layout_width="191dp"
-                    android:layout_height="51dp"
-                    android:layout_gravity="center_horizontal|center"
-                    android:layout_marginLeft="42dp"
-                    android:layout_marginTop="255dp"
-                    android:gravity="center"
-                    android:text="@string/string_today"
-                    android:textColor="@color/color_text"
-                    android:textSize="24sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/string_sugar_level_graph_profile"
-                    android:layout_width="234dp"
-                    android:layout_height="51dp"
-                    android:layout_gravity="center_horizontal|center"
-                    android:layout_marginLeft="40dp"
-                    android:layout_marginTop="355dp"
-                    android:gravity="center"
-                    android:text="@string/string_graph"
-                    android:textColor="@color/color_text"
-                    android:textSize="24sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/string_calendar_profile"
-                    android:layout_width="173dp"
-                    android:layout_height="54dp"
-                    android:layout_gravity="center_horizontal|center"
-                    android:layout_marginLeft="67dp"
-                    android:layout_marginTop="455dp"
-                    android:gravity="center"
-                    android:text="@string/string_calendar"
-                    android:textColor="@color/color_text"
-                    android:textSize="24sp"
-                    android:textStyle="bold" />
-
-
-                <RelativeLayout
-                    android:id="@+id/button_today_profile"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="242dp"
-                    android:layout_marginLeft="270dp"
-                    android:layout_marginTop="255dp">
-
-
-                    <RelativeLayout
-                        android:id="@+id/state_layer_today_profile"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="0dp"
-                        android:layout_marginTop="0dp"
-                        android:background="@drawable/orange_rectangle">
-
-                        <TextView
-                            android:id="@+id/label_text_today_profile"
-                            android:layout_width="47dp"
-                            android:layout_height="37dp"
-                            android:layout_centerInParent="true"
-                            android:layout_gravity="center_horizontal|center"
-                            android:layout_marginLeft="22dp"
-                            android:layout_marginTop="14dp"
-                            android:gravity="center"
-                            android:text="@string/string_go"
-                            android:textColor="@color/color_text"
-                            android:textSize="24sp"
-                            android:textStyle="bold" />
-
-                    </RelativeLayout>
-
-                </RelativeLayout>
-
-
-                <RelativeLayout
-                    android:id="@+id/button_sugar_leve_profile"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="242dp"
-                    android:layout_marginLeft="270dp"
-                    android:layout_marginTop="355dp">
-
-
-                    <RelativeLayout
-                        android:id="@+id/state_layer_sugar_level_profile"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="0dp"
-                        android:layout_marginTop="0dp"
-                        android:background="@drawable/orange_rectangle">
-
-                        <TextView
-                            android:id="@+id/label_text_sugar_level_profile"
-                            android:layout_width="47dp"
-                            android:layout_height="37dp"
-                            android:layout_centerInParent="true"
-                            android:layout_gravity="center_horizontal|center"
-                            android:layout_marginLeft="22dp"
-                            android:layout_marginTop="14dp"
-                            android:gravity="center"
-                            android:text="@string/string_go"
-                            android:textColor="@color/color_text"
-                            android:textSize="24sp"
-                            android:textStyle="bold" />
-
-                    </RelativeLayout>
-
-                </RelativeLayout>
-
-
-                <RelativeLayout
-                    android:id="@+id/button_calendar_profile"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="242dp"
-                    android:layout_marginLeft="270dp"
-                    android:layout_marginTop="455dp">
-
-
-                    <RelativeLayout
-                        android:id="@+id/state_layer_calendar_profile"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="0dp"
-                        android:layout_marginTop="0dp"
-                        android:background="@drawable/orange_rectangle">
-
-                        <TextView
-                            android:id="@+id/label_text_calendar_profile"
-                            android:layout_width="47dp"
-                            android:layout_height="37dp"
-                            android:layout_centerInParent="true"
-                            android:layout_gravity="center_horizontal|center"
-                            android:layout_marginLeft="22dp"
-                            android:layout_marginTop="14dp"
-                            android:gravity="center"
-                            android:text="@string/string_go"
-                            android:textColor="@color/color_text"
-                            android:textSize="24sp"
-                            android:textStyle="bold" />
-
-                    </RelativeLayout>
-
-                </RelativeLayout>
-
-
-                <RelativeLayout
-                    android:id="@+id/button_glucoze_profile"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginLeft="50dp"
-                    android:layout_marginTop="550dp">
-
-
-                    <RelativeLayout
-                        android:id="@+id/state_layer_glucoze_profile"
-                        android:layout_width="315dp"
-                        android:layout_height="50dp"
-                        android:layout_marginTop="0dp"
-                        android:background="@drawable/orange_rectangle">
-
-                        <TextView
-                            android:id="@+id/label_text_glucoze_profile"
-                            android:layout_width="112dp"
-                            android:layout_height="46dp"
-                            android:layout_centerInParent="true"
-                            android:layout_gravity="center_horizontal|center"
-                            android:layout_marginLeft="99dp"
-                            android:layout_marginTop="9.5dp"
-                            android:gravity="center"
-                            android:text="@string/string_glucoze"
-                            android:textColor="@color/color_text"
-                            android:textSize="24sp"
-                            android:textStyle="bold" />
-
-                    </RelativeLayout>
-
-                </RelativeLayout>
-
-
-                <RelativeLayout
-                    android:id="@+id/button_lst_profile"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginLeft="50dp"
-                    android:layout_marginTop="620dp">
-
-
-                    <RelativeLayout
-                        android:id="@+id/state_layer_list_profile"
-                        android:layout_width="315dp"
-                        android:layout_height="50dp"
-                        android:layout_marginStart="0dp"
-                        android:layout_marginTop="0dp"
-                        android:background="@drawable/orange_rectangle">
-
-                        <TextView
-                            android:id="@+id/label_text_list_profile"
-                            android:layout_width="182dp"
-                            android:layout_height="46dp"
-                            android:layout_centerInParent="true"
-                            android:layout_gravity="center_horizontal|center"
-                            android:layout_marginLeft="64dp"
-                            android:layout_marginTop="9.5dp"
-                            android:gravity="center"
-                            android:text="@string/string_list_day"
-                            android:textColor="@color/color_text"
-                            android:textSize="24sp"
-                            android:textStyle="bold" />
-
-                    </RelativeLayout>
-
-                </RelativeLayout>
-
-            </RelativeLayout>
-        </RelativeLayout>
-
-    </ScrollView>
-</HorizontalScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

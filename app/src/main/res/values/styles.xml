@@ -2,15 +2,17 @@
 <resources>
 	<!-- add_med styles -->
 
-	<style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+	<style name="AppTheme" parent="Base.Theme.AppCompat">
 		<item name="colorPrimary">@color/colorPrimary</item>
 		<item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-		<item name="colorAccent">@color/colorAccent</item>
+		<item name="colorAccent">@color/orange_color</item>
 	</style>
 
-	<style name="Base.Theme.BloodGlucose" parent="Theme.Material3.DayNight.NoActionBar">
-		<!-- Customize your light theme here. -->
-		<!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+	<style name="Base.Theme.BloodGlucose" parent="Base.Theme.AppCompat">
+		<!--<item name="android:background">@color/screen_background</item>-->
+		<item name="backgroundColor">@color/orange_color</item>
+		<item name="android:colorButtonNormal">@color/orange_color</item>
+
 	</style>
 
 	<style name="Theme.BloodGlucose" parent="Base.Theme.BloodGlucose" />

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/screen_background">
@@ -26,7 +27,7 @@
         android:layout_gravity="center_horizontal|center"
         android:layout_marginTop="20dp"
         android:gravity="center"
-        android:text="@string/string_advice"
+        android:text="@string/string_gl_level"
         android:textColor="@color/color_text"
         android:textSize="40sp"
         android:textStyle="bold"
@@ -37,22 +38,34 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.106" />
 
-    <View
-        android:id="@+id/rectangle_text_advice"
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/glucose_level"
         android:layout_width="311dp"
-        android:layout_height="400dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/grey_rectangle"
+        android:layout_height="66dp"
+        android:layout_marginTop="65dp"
+        android:background="@drawable/beige_rectangle"
+        android:hint="@string/input_glucose_level"
+        android:textColorHint="@color/grey_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rectangle_or_profile" />
+        app:layout_constraintTop_toBottomOf="@+id/string_profile">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/glucose_level_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="16dp"
+            android:inputType="numberDecimal" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/button_home_advice"
+        android:id="@+id/button_glucose_back"
         style="@style/Base.Theme.BloodGlucose"
         android:layout_width="150dp"
         android:layout_height="50dp"
+        android:layout_marginBottom="50dp"
         android:background="@drawable/orange_rectangle"
         android:text="@string/string_back"
         android:textColor="@color/color_text"
@@ -60,6 +73,35 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button_submit_glucose"
+        style="@style/Base.Theme.BloodGlucose"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="168dp"
+        android:background="@drawable/orange_rectangle"
+        android:text="@string/string_submit"
+        android:textColor="@color/color_text"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rectangle_text_advice" />
+        app:layout_constraintTop_toBottomOf="@+id/glucose_level"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <View
+        android:id="@+id/rectangle_comment_add_glucoze_level"
+        android:layout_width="311dp"
+        android:layout_height="160dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/grey_rectangle"
+        app:layout_constraintBottom_toTopOf="@+id/button_glucose_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_submit_glucose" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
     <application
+
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -12,6 +14,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BloodGlucose"
         tools:targetApi="31">
+        <activity android:name=".ProfileActivity"></activity>
+        <activity android:name=".SugarGraphActivity"></activity>
+        <activity android:name=".TodayActivity"></activity>
+        <activity android:name=".CalendarActivity"></activity>
+        <activity android:name=".GlucoseActivity"></activity>
+        <activity android:name=".ProductActivity"></activity>
+        <activity android:name=".AdviceActivity"></activity>
         <activity
             android:name=".MainActivity"
             android:exported="true">

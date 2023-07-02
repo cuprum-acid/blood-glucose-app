@@ -1,160 +1,128 @@
-<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent"
+    android:background="@color/screen_background">
 
-    <ScrollView
-        android:id="@+id/today"
+    <View
+        android:id="@+id/rectangle_or_profile"
+        android:layout_width="311dp"
+        android:layout_height="102dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/orange_rectangle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.103" />
+
+    <TextView
+        android:id="@+id/string_profile"
+        android:layout_width="268dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal|center"
+        android:gravity="center"
+        android:text="@string/string_today"
+        android:textColor="@color/color_text"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.106" />
+
+    <View
+        android:id="@+id/rectangle_main_inf_today"
+        android:layout_width="311dp"
+        android:layout_height="208dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/grey_rectangle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rectangle_or_profile" />
+
+    <TextView
+        android:id="@+id/string_advice_today"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:text="@string/string_advice_today"
+        android:textColor="@color/color_text"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rectangle_main_inf_today" />
 
-        <RelativeLayout
-            android:id="@+id/content_container_today"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+    <View
+        android:id="@+id/rectangle_advice_inf_today"
+        android:layout_width="311dp"
+        android:layout_height="122dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/beige_rectangle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/string_advice_today" />
 
+    <Button
+        android:id="@+id/button_today_advice"
+        style="@style/Base.Theme.BloodGlucose"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/orange_rectangle"
+        android:text="@string/string_read_more"
+        android:textColor="@color/color_text"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.808"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rectangle_advice_inf_today" />
 
-            <RelativeLayout
-                android:id="@+id/page_today"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="0dp"
-                android:layout_marginTop="0dp">
+    <Button
+        android:id="@+id/button_home_today"
+        style="@style/Base.Theme.BloodGlucose"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/orange_rectangle"
+        android:text="@string/string_back"
+        android:textColor="@color/color_text"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button_today_advice"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rectangle_advice_inf_today" />
 
-                <View
-                    android:id="@+id/b_today"
-                    android:layout_width="410dp"
-                    android:layout_height="730dp"
-                    android:layout_marginStart="0dp"
-                    android:layout_marginTop="0dp"
-                    android:background="@drawable/screen" />
+    <!--    <Button-->
+    <!--        android:id="@+id/button_home_today"-->
+    <!--        style="@style/Base.Theme.BloodGlucose"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginEnd="300dp"-->
+    <!--        android:background="@drawable/grey_rectangle"-->
+    <!--        android:text="@string/string_home"-->
+    <!--        android:textColor="@color/color_text"-->
+    <!--        android:textSize="24sp"-->
+    <!--        android:textStyle="bold"-->
+    <!--        app:layout_constraintBottom_toTopOf="@+id/rectangle_or_profile"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.695"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        app:layout_constraintVertical_bias="0.457" />-->
 
-                <View
-                    android:id="@+id/rectangle_or_today"
-                    android:layout_width="311dp"
-                    android:layout_height="112dp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginTop="85dp"
-                    android:background="@drawable/orange_rectangle" />
-
-                <TextView
-                    android:id="@+id/string_today"
-                    android:layout_width="222dp"
-                    android:layout_height="128dp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_gravity="center_horizontal|center"
-                    android:layout_marginLeft="77dp"
-                    android:layout_marginTop="75dp"
-                    android:gravity="center"
-                    android:text="@string/string_today"
-                    android:textColor="@color/color_text"
-                    android:textSize="36sp"
-                    android:textStyle="bold" />
-
-                <View
-                    android:id="@+id/rectangle_main_inf_today"
-                    android:layout_width="311dp"
-                    android:layout_height="208dp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginStart="21dp"
-                    android:layout_marginTop="230dp"
-                    android:background="@drawable/grey_rectangle" />
-
-                <TextView
-                    android:id="@+id/string_advice_today"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginLeft="27dp"
-                    android:layout_marginTop="460dp"
-                    android:text="@string/string_advice_today"
-                    android:textColor="@color/grey_text"
-                    android:textSize="36sp"
-                    android:textStyle="bold" />
-
-                <View
-                    android:id="@+id/rectangle_advice_inf_today"
-                    android:layout_width="311dp"
-                    android:layout_height="122dp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginStart="21dp"
-                    android:layout_marginTop="530dp"
-                    android:background="@drawable/beige_rectangle" />
-
-
-                <RelativeLayout
-                    android:id="@+id/button_read_more_today"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginStart="96dp"
-                    android:layout_marginTop="665dp">
-
-
-                    <RelativeLayout
-                        android:id="@+id/state_layer_read_more_today"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="0dp"
-                        android:layout_marginTop="0dp"
-                        android:background="@drawable/orange_rectangle">
-
-                        <TextView
-                            android:id="@+id/label_text_read_more_today"
-                            android:layout_width="133dp"
-                            android:layout_height="37dp"
-                            android:layout_centerInParent="true"
-                            android:layout_gravity="center_horizontal|center"
-                            android:layout_marginLeft="21.5dp"
-                            android:layout_marginTop="14dp"
-                            android:gravity="center"
-                            android:text="@string/string_read_more"
-                            android:textColor="@color/color_text"
-                            android:textSize="24sp"
-                            android:textStyle="bold" />
-
-                    </RelativeLayout>
-
-                </RelativeLayout>
-
-
-                <RelativeLayout
-                    android:id="@+id/button_home_today"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginTop="29dp">
-
-
-                    <RelativeLayout
-                        android:id="@+id/state_layer_home_today"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="0dp"
-                        android:layout_marginTop="0dp"
-                        android:background="@drawable/grey_rectangle">
-
-                        <TextView
-                            android:id="@+id/label_text_home_today"
-                            android:layout_width="80dp"
-                            android:layout_height="37dp"
-                            android:layout_centerInParent="true"
-                            android:layout_gravity="center_horizontal|center"
-                            android:layout_marginLeft="12dp"
-                            android:layout_marginTop="5dp"
-                            android:gravity="center"
-                            android:text="@string/string_home"
-                            android:textColor="@color/color_text"
-                            android:textSize="24sp"
-                            android:textStyle="bold" />
-
-                    </RelativeLayout>
-
-                </RelativeLayout>
-
-            </RelativeLayout>
-        </RelativeLayout>
-
-    </ScrollView>
-</HorizontalScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
