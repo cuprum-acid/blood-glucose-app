@@ -26,7 +26,7 @@
         android:gravity="center"
         android:text="@string/string_calendar"
         android:textColor="@color/color_text"
-        android:textSize="40sp"
+        android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/rectangle_or_profile"
         app:layout_constraintEnd_toEndOf="@+id/rectangle_or_profile"

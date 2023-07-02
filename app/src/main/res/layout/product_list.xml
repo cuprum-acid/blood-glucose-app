@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/screen_background">
+
+    <View
+        android:id="@+id/rectangle_or_profile"
+        android:layout_width="311dp"
+        android:layout_height="102dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/orange_rectangle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.103" />
+
+    <TextView
+        android:id="@+id/string_profile"
+        android:layout_width="268dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal|center"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="@string/string_list_prod"
+        android:textColor="@color/color_text"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.106" />
+
+    <Button
+        android:id="@+id/button_dairy_list_pr"
+        style="@style/Base.Theme.BloodGlucose"
+        android:layout_width="311dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/grey_rectangle"
+        android:text="@string/string_dairy_pr"
+        android:textColor="@color/color_text"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rectangle_or_profile" />
+
+    <Button
+        android:id="@+id/button_m_and_f_list_pr"
+        style="@style/Base.Theme.BloodGlucose"
+        android:layout_width="311dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/grey_rectangle"
+        android:text="@string/string_m_and_f"
+        android:textColor="@color/color_text"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_dairy_list_pr" />
+
+    <Button
+        android:id="@+id/button_v_and_f_list_pr"
+        style="@style/Base.Theme.BloodGlucose"
+        android:layout_width="311dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/grey_rectangle"
+        android:text="@string/string_veg_and_fruits"
+        android:textColor="@color/color_text"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_m_and_f_list_pr" />
+
+    <Button
+        android:id="@+id/button_grocery_list_pr"
+        style="@style/Base.Theme.BloodGlucose"
+        android:layout_width="311dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/grey_rectangle"
+        android:text="@string/string_grocery"
+        android:textColor="@color/color_text"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_v_and_f_list_pr" />
+
+    <Button
+        android:id="@+id/button_p_and_s_list_pr"
+        style="@style/Base.Theme.BloodGlucose"
+        android:layout_width="311dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/grey_rectangle"
+        android:text="@string/string_pastries_and_sweets"
+        android:textColor="@color/color_text"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_grocery_list_pr" />
+
+    <Button
+        android:id="@+id/button_plus_list_pr"
+        style="@style/Base.Theme.BloodGlucose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="161dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="162dp"
+        android:background="@drawable/orange_rectangle"
+        android:text="@string/string_plus"
+        android:textColor="@color/color_text"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_p_and_s_list_pr"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/button_back_add_pr"
+        style="@style/Base.Theme.BloodGlucose"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/orange_rectangle"
+        android:text="@string/string_back"
+        android:textColor="@color/color_text"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.191"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_plus_list_pr"
+        app:layout_constraintVertical_bias="0.888" />
+
+    <Button
+        android:id="@+id/button_next_list_pr"
+        style="@style/Base.Theme.BloodGlucose"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/orange_rectangle"
+        android:text="@string/string_next"
+        android:textColor="@color/color_text"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.808"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_plus_list_pr"
+        app:layout_constraintVertical_bias="1.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
