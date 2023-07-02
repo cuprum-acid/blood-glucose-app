@@ -51,10 +51,11 @@
     <string name="string_proteins">Number of proteins</string>
     <string name="string_type">Type </string>
     <string name="string_submit">Submit</string>
-    <string name="string_sugar_level_high">sugar level are high </string>
+    <string name="string_sugar_level_high">high sugar level</string>
     <string name="string_normal_sugar_level">normal sugar level </string>
-    <string name="string_sugar_levels_low">sugar levels are low</string>
+    <string name="string_sugar_levels_low">low sugar level</string>
     <string name="string_export">Export</string>
+    <string name="input_glucose_level">input glucose level</string>
     <string-array name="add_med">
         <item>Pills</item>
         <item>Insulin syringe</item>
