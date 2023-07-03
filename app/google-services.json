@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "31782211123",
+    "project_id": "blood-glucose-app",
+    "storage_bucket": "blood-glucose-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:31782211123:android:bd75960e5270db4c261d46",
+        "android_client_info": {
+          "package_name": "com.example.bloodglucose.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "31782211123-khjt76nnvacih672kflf658pmt70ib6t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-dJYFB8hNhKUo55BbwHDoFYbaYjniEeY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "31782211123-khjt76nnvacih672kflf658pmt70ib6t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
