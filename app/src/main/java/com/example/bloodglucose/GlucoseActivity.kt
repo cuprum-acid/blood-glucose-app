@@ -11,7 +11,10 @@ import android.widget.Button
 import androidx.core.content.ContextCompat.getSystemService
 import com.example.bloodglucose.databinding.GlucoseBinding
 import com.example.databaseinterface.Database
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 
+val glucoseLevels = ArrayList<Int>()
 
 class GlucoseActivity : AppCompatActivity() {
     private lateinit var binding: GlucoseBinding
@@ -19,7 +22,24 @@ class GlucoseActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = GlucoseBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        binding.buttonSubmitGlucose.setOnClickListener { Database.getInstance("app/src/main/java/com/example/bloodglucose/DataBase.db").submitGlucose(binding.glucoseLevelEditText.text.toString().toDouble()) }
+
+        binding.buttonSubmitGlucose.setOnClickListener {
+            val glucoseLevelText = binding.glucoseLevelEditText.text.toString()
+            if (glucoseLevelText.isNotEmpty()) {
+                val glucoseLevel = glucoseLevelText.toInt()
+
+                // Add the glucose level to the array
+                glucoseLevels.add(glucoseLevel)
+
+                // Store the array in Firebase
+                val database = Firebase.database
+                val myRef = database.getReference("glucose levels")
+                myRef.setValue(glucoseLevels)
+
+                // Clear the input field
+                binding.glucoseLevelEditText.text?.clear()
+            }
+        }
         binding.glucoseLevelEditText.setOnKeyListener { view, keyCode, _ ->
             handleKeyEvent(view, keyCode)
         }
