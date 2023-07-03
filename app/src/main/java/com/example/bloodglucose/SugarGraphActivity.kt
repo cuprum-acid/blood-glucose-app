@@ -24,9 +24,11 @@ class SugarGraphActivity : AppCompatActivity() {
 
         val chart: LineChart = findViewById(R.id.chart)
 
+
         val sugarLevels = listOf(80, 90, 85, 95, 100, 92) // Sample sugar level data
 
-        val entries = sugarLevels.mapIndexed { index, sugarLevel ->
+
+        val entries = glucoseLevels.mapIndexed { index, sugarLevel ->
             Entry(index.toFloat(), sugarLevel.toFloat())
         }
 
