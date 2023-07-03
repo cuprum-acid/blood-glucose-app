@@ -33,6 +33,13 @@
         <activity android:name=".AddExerciseActivity"></activity>
         <activity android:name=".AddMedsActivity"></activity>
         <activity android:name=".ListExercisesActivity"></activity>
+
+        <activity android:name=".PillsMedActivity"></activity>
+        <activity android:name=".InsulinMedActivity"></activity>
+
+        <activity android:name=".CardioExerActivity"></activity>
+        <activity android:name=".StaticExerActivity"></activity>
+        <activity android:name=".PowerExerActivity"></activity>
         <activity
             android:name=".MainActivity"
             android:exported="true">

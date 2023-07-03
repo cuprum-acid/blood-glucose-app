@@ -29,5 +29,23 @@ class ListExercisesActivity : AppCompatActivity() {
             startActivity(plusIntent)
         }
 
+        val cardioButton: Button = findViewById(R.id.button_cardio)
+        cardioButton.setOnClickListener {
+            val cardioIntent = Intent(this@ListExercisesActivity, CardioExerActivity::class.java)
+            startActivity(cardioIntent)
+        }
+
+        val staticButton: Button = findViewById(R.id.button_static)
+        staticButton.setOnClickListener {
+            val staticIntent = Intent(this@ListExercisesActivity, StaticExerActivity::class.java)
+            startActivity(staticIntent)
+        }
+
+        val powerButton: Button = findViewById(R.id.button_power)
+        powerButton.setOnClickListener {
+            val powerIntent = Intent(this@ListExercisesActivity, PowerExerActivity::class.java)
+            startActivity(powerIntent)
+        }
+
     }
 }

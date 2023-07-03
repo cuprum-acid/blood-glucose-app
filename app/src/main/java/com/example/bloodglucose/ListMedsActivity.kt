@@ -28,5 +28,17 @@ class ListMedsActivity : AppCompatActivity() {
             startActivity(plusIntent)
         }
 
+        val pillButton: Button = findViewById(R.id.button_pills)
+        pillButton.setOnClickListener {
+            val pillIntent = Intent(this@ListMedsActivity, PillsMedActivity::class.java)
+            startActivity(pillIntent)
+        }
+
+        val insulinButton: Button = findViewById(R.id.button_insulin)
+        insulinButton.setOnClickListener {
+            val insulinIntent = Intent(this@ListMedsActivity, InsulinMedActivity::class.java)
+            startActivity(insulinIntent)
+        }
+
     }
 }
