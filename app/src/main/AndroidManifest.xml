@@ -21,6 +21,14 @@
         <activity android:name=".GlucoseActivity"></activity>
         <activity android:name=".ProductActivity"></activity>
         <activity android:name=".AdviceActivity"></activity>
+
+        <activity android:name=".AddProductActivity"></activity>
+        <activity android:name=".DairyActivity"></activity>
+        <activity android:name=".GroceryActivity"></activity>
+        <activity android:name=".ListMedsActivity"></activity>
+        <activity android:name=".MeatFishActivity"></activity>
+        <activity android:name=".PastrSweetsActivity"></activity>
+        <activity android:name=".VegsFruitsActivity"></activity>
         <activity
             android:name=".MainActivity"
             android:exported="true">

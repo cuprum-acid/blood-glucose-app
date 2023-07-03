@@ -171,7 +171,7 @@
         android:layout_height="50dp"
         android:layout_marginTop="25dp"
         android:background="@drawable/orange_rectangle"
-        android:text="@string/string_glucoze"
+        android:text="@string/string_glucose"
         android:textColor="@color/color_text"
         android:textSize="24sp"
         android:textStyle="bold"

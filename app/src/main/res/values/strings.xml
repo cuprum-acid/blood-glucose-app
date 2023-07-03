@@ -11,18 +11,18 @@
     <string name="string_graph">Sugar graph</string>
     <string name="string_calendar">Calendar</string>
     <string name="string_go">Go</string>
-    <string name="string_glucoze">Glucose</string>
+    <string name="string_glucose">Glucose</string>
     <string name="string_list_day">Daily mark</string>
-    <string name="string_glucoze_1">GLUCOSE</string>
+    <string name="string_glucose_1">GLUCOSE</string>
     <string name="string_back">Back</string>
     <string name="string_dairy_pr">Dairy products</string>
     <string name="string_m_and_f">Meat and Fish</string>
-    <string name="string_veg_and_fruits">Vegetables and fruits</string>
+    <string name="string_veg_and_fruits">Vegetables and Fruits</string>
     <string name="string_cardio">Cardio exercises</string>
-    <string name="string_static_exer">Static loads</string>
+    <string name="string_static_exer">Static exercises</string>
     <string name="string_power">Power exercises</string>
     <string name="string_grocery">Grocery</string>
-    <string name="string_pastries_and_sweets">Pastries and sweets</string>
+    <string name="string_pastries_and_sweets">Pastries and Sweets</string>
     <string name="string_pills">Pills</string>
     <string name="string_insulin">Insulin syringe</string>
     <string-array name="list_dairy_pr">
@@ -56,20 +56,23 @@
     <string name="string_sugar_levels_low">low sugar level</string>
     <string name="string_export">Export</string>
     <string name="input_glucose_level">input glucose level</string>
+    <string name="input_exercise">input exercise</string>
+    <string name="input_medication">input medication</string>
+    <string name="input_product">input product</string>
     <string-array name="add_med">
         <item>Pills</item>
         <item>Insulin syringe</item>
     </string-array>
     <string-array name="add_exer">
         <item>Cardio exercises</item>
-        <item>Static loads</item>
+        <item>Static exercises</item>
         <item>Power exercises</item>
     </string-array>
     <string-array name="add_pr">
         <item>Dairy products</item>
         <item>Meat and Fish</item>
-        <item>Vegetables and fruits</item>
+        <item>Vegetables and Fruits</item>
         <item>Grocery</item>
-        <item>Pastries and sweets</item>
+        <item>Pastries and Sweets</item>
     </string-array>
 </resources>
