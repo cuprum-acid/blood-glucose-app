@@ -29,6 +29,10 @@
         <activity android:name=".MeatFishActivity"></activity>
         <activity android:name=".PastrSweetsActivity"></activity>
         <activity android:name=".VegsFruitsActivity"></activity>
+
+        <activity android:name=".AddExerciseActivity"></activity>
+        <activity android:name=".AddMedsActivity"></activity>
+        <activity android:name=".ListExercisesActivity"></activity>
         <activity
             android:name=".MainActivity"
             android:exported="true">

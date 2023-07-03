@@ -5,15 +5,17 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 
-class DairyActivity : AppCompatActivity() {
+class AddExerciseActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.dairy)
+        setContentView(R.layout.add_exer)
 
-        val backButton: Button = findViewById(R.id.button_back_dairy)
+        val backButton: Button = findViewById(R.id.button_add_exer_back)
         backButton.setOnClickListener {
-            val backIntent = Intent(this@DairyActivity, ProductActivity::class.java)
+            val backIntent = Intent(this@AddExerciseActivity, ListExercisesActivity::class.java)
             startActivity(backIntent)
         }
+
+
     }
 }
