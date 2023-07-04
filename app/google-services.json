@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "31782211123",
+    "firebase_url": "https://blood-glucose-app-default-rtdb.firebaseio.com",
     "project_id": "blood-glucose-app",
     "storage_bucket": "blood-glucose-app.appspot.com"
   },
