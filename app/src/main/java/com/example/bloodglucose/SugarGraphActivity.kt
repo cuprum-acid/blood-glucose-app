@@ -7,7 +7,8 @@ import android.widget.Button
 import com.github.mikephil.charting.charts.LineChart
 import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.data.LineData
-import com.github.mikephil.charting.data.LineDataSet
+import com.github.mikephil.charting.data.LineDataSet import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 class SugarGraphActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,18 +26,38 @@ class SugarGraphActivity : AppCompatActivity() {
         val chart: LineChart = findViewById(R.id.chart)
 
 
-        val sugarLevels = listOf(80, 90, 85, 95, 100, 92) // Sample sugar level data
+        // val sugarLevels = listOf(80, 90, 85, 95, 100, 92) // Sample sugar level data
 
+        val db = Firebase.firestore.collection("users").document(USER_ID)
 
-        val entries = glucoseLevels.mapIndexed { index, sugarLevel ->
-            Entry(index.toFloat(), sugarLevel.toFloat())
-        }
+        val glucoseLevels = ArrayList<Int>()
 
-        val dataSet = LineDataSet(entries, "Sugar Level")
-        val lineData = LineData(dataSet)
+        db.collection("glucoseRecords")
+            .get()
+            .addOnSuccessListener { documents ->
+                for (document in documents) {
+                    val value = document.getLong("value")?.toInt()
+                    if (value != null) {
+                        glucoseLevels.add(value)
+                    }
+                    println(value)
+                }
 
-        chart.data = lineData
-        chart.invalidate() // Refresh the chart
+                // Move this code inside the success listener
+                val entries = glucoseLevels.mapIndexed { index, sugarLevel ->
+                    Entry(index.toFloat(), sugarLevel.toFloat())
+                }
+
+                val dataSet = LineDataSet(entries, "Sugar Level")
+                val lineData = LineData(dataSet)
+
+                chart.data = lineData
+                chart.invalidate() // Refresh the chart
+            }
+            .addOnFailureListener { exception ->
+                println("Error getting documents: $exception")
+            }
+
 
     }
 }
