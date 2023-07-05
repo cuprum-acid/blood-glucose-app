@@ -1,18 +1,23 @@
 package com.example.bloodglucose
 
+import android.content.ContentValues.TAG
 import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.KeyEvent
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.Button
-import androidx.core.content.ContextCompat.getSystemService
 import com.example.bloodglucose.databinding.GlucoseBinding
 import com.example.databaseinterface.Database
-import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.firestore.FieldValue
+
+
+val USER_ID = "TestUser"
 
 val glucoseLevels = ArrayList<Int>()
 
@@ -32,9 +37,27 @@ class GlucoseActivity : AppCompatActivity() {
                 glucoseLevels.add(glucoseLevel)
 
                 // Store the array in Firebase
-                val database = Firebase.database
-                val myRef = database.getReference("glucose levels")
-                myRef.setValue(glucoseLevels)
+                val database = Firebase.firestore
+
+                val ref = database.collection("users").document(USER_ID)
+
+                // create a hashmap of values to be uploaded to the database
+                val measurement = hashMapOf(
+                    "datetime" to FieldValue.serverTimestamp(),
+                    "value" to glucoseLevel
+                )
+
+
+                val myRef = ref.collection("glucoseRecords")
+                    .add(measurement)
+                    .addOnSuccessListener { documentReference ->
+                        Log.d(TAG, "Glucose_record added with ID: ${documentReference.id}")
+                    }
+                    .addOnFailureListener { e ->
+                        Log.w(TAG, "Error adding Glucose_record", e)
+                    }
+
+                // myRef.setValue(glucoseLevels)
 
                 // Clear the input field
                 binding.glucoseLevelEditText.text?.clear()
