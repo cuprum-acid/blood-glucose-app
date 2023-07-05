@@ -11,10 +11,13 @@ import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import com.example.bloodglucose.databinding.GlucoseBinding
+import com.example.databaseinterface.Database
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.FieldValue
 
+
+val USER_ID = "TestUser"
 
 val glucoseLevels = ArrayList<Int>()
 
@@ -36,6 +39,8 @@ class GlucoseActivity : AppCompatActivity() {
                 // Store the array in Firebase
                 val database = Firebase.firestore
 
+                val ref = database.collection("users").document(USER_ID)
+
                 // create a hashmap of values to be uploaded to the database
                 val measurement = hashMapOf(
                     "datetime" to FieldValue.serverTimestamp(),
@@ -43,14 +48,15 @@ class GlucoseActivity : AppCompatActivity() {
                 )
 
 
-                database.collection("glucose_records")
+                val myRef = ref.collection("glucoseRecords")
                     .add(measurement)
                     .addOnSuccessListener { documentReference ->
-                        Log.d(TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
+                        Log.d(TAG, "Glucose_record added with ID: ${documentReference.id}")
                     }
                     .addOnFailureListener { e ->
-                        Log.w(TAG, "Error adding document", e)
+                        Log.w(TAG, "Error adding Glucose_record", e)
                     }
+
                 // myRef.setValue(glucoseLevels)
 
                 // Clear the input field
