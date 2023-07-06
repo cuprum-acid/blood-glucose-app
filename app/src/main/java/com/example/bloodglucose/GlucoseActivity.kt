@@ -11,7 +11,6 @@ import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import com.example.bloodglucose.databinding.GlucoseBinding
-import com.example.databaseinterface.Database
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.FieldValue
@@ -48,7 +47,7 @@ class GlucoseActivity : AppCompatActivity() {
                 )
 
 
-                val myRef = ref.collection("glucoseRecords")
+                ref.collection("glucoseRecords")
                     .add(measurement)
                     .addOnSuccessListener { documentReference ->
                         Log.d(TAG, "Glucose_record added with ID: ${documentReference.id}")
