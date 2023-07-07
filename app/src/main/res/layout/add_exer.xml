@@ -82,7 +82,8 @@
             android:id="@+id/glucose_level_edit_text"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginStart="16dp">
+            android:layout_marginStart="16dp"
+            android:textColor="@color/color_text">
 
         </com.google.android.material.textfield.TextInputEditText>
 
