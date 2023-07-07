@@ -130,8 +130,6 @@
         android:layout_height="341dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-
-        android:onClick="onClick"
         app:layout_constraintBottom_toBottomOf="@+id/rectangle_beige_calendar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
