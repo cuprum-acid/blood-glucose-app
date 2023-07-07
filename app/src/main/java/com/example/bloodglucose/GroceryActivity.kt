@@ -22,7 +22,7 @@ class GroceryActivity : AppCompatActivity() {
         }
 
 
-        // Create a list of dairy products
+        // Create a list of grocery products
         val groceryProducts = ArrayList<String>()
 
 
