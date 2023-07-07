@@ -69,8 +69,6 @@ class DairyActivity : AppCompatActivity() {
                     startActivity(backIntent)
 
                 }
-
-
             }
             .addOnFailureListener { exception ->
                 println("Error getting documents: $exception")
