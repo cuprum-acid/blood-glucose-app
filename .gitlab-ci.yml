@@ -1,31 +1,58 @@
-stages:          # List of stages for jobs, and their order of execution
-  - build
-  - test
-  - deploy
+image: eclipse-temurin:17-jdk-jammy
 
-build-job:       # This job runs in the build stage, which runs first.
+variables:
+
+  ANDROID_COMPILE_SDK: "33"
+
+  ANDROID_BUILD_TOOLS: "33.0.2"
+
+  ANDROID_SDK_TOOLS: "9477386"
+
+
+before_script:
+  - apt-get --quiet update --yes
+  - apt-get --quiet install --yes wget unzip
+  - export ANDROID_HOME="${PWD}/android-sdk-root"
+  - install -d $ANDROID_HOME
+  - wget --no-verbose --output-document=$ANDROID_HOME/cmdline-tools.zip https://dl.google.com/android/repository/commandlinetools-linux-${ANDROID_SDK_TOOLS}_latest.zip
+  - unzip -q -d "$ANDROID_HOME/cmdline-tools" "$ANDROID_HOME/cmdline-tools.zip"
+  - mv -T "$ANDROID_HOME/cmdline-tools/cmdline-tools" "$ANDROID_HOME/cmdline-tools/tools"
+  - export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/cmdline-tools/tools/bin
+  - sdkmanager --version
+  - yes | sdkmanager --licenses > /dev/null || true
+  - sdkmanager "platforms;android-${ANDROID_COMPILE_SDK}"
+  - sdkmanager "platform-tools"
+  - sdkmanager "build-tools;${ANDROID_BUILD_TOOLS}"
+
+  - chmod +x ./gradlew
+
+
+lintDebug:
+  interruptible: true
   stage: build
   script:
-    - echo "Compiling the code..."
-    - echo "Compile complete."
+    - ./gradlew -Pci --console=plain :app:lintDebug -PbuildDir=lint
+  artifacts:
+    paths:
+      - app/lint/reports/lint-results-debug.html
+    expose_as: "lint-report"
+    when: always
 
-unit-test-job:   # This job runs in the test stage.
-  stage: test    # It only starts when the job in the build stage completes successfully.
+# Make Project
+assembleDebug:
+  interruptible: true
+  stage: build
   script:
-    - echo "Running unit tests... This will take about 60 seconds."
-    - sleep 60
-    - echo "Code coverage is 90%"
+    - ./gradlew assembleDebug
+  artifacts:
+    paths:
+      # When SWP course team will fix artifact size issue, change to app-debug.apk
+      - app/build/outputs/apk/debug/output-metadata.json
 
-lint-test-job:   # This job also runs in the test stage.
-  stage: test    # It can run at the same time as unit-test-job (in parallel).
+# Run all tests, if any fails, interrupt the pipeline(fail it)
+debugTests:
+  needs: [lintDebug, assembleDebug]
+  interruptible: true
+  stage: test
   script:
-    - echo "Linting code... This will take about 10 seconds."
-    - sleep 10
-    - echo "No lint issues found."
-
-deploy-job:      # This job runs in the deploy stage.
-  stage: deploy  # It only runs when *both* jobs in the test stage complete successfully.
-  environment: production
-  script:
-    - echo "Deploying application..."
-    - echo "Application successfully deployed."
+    - ./gradlew -Pci --console=plain :app:testDebug
