@@ -56,7 +56,7 @@ class PowerExerActivity : AppCompatActivity() {
 
 
                 val backIntent =
-                    Intent(this@PowerExerActivity, ProductActivity::class.java)
+                    Intent(this@PowerExerActivity, ListExercisesActivity::class.java)
                 startActivity(backIntent)
             }
         }

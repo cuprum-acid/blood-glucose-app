@@ -56,7 +56,7 @@ class StaticExerActivity : AppCompatActivity() {
 
 
                 val backIntent =
-                    Intent(this@StaticExerActivity, ProductActivity::class.java)
+                    Intent(this@StaticExerActivity, ListExercisesActivity::class.java)
                 startActivity(backIntent)
             }
         }

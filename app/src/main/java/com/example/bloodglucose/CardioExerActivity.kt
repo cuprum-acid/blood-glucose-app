@@ -56,7 +56,7 @@ class CardioExerActivity : AppCompatActivity() {
 
 
                         val backIntent =
-                            Intent(this@CardioExerActivity, ProductActivity::class.java)
+                            Intent(this@CardioExerActivity, ListExercisesActivity::class.java)
                         startActivity(backIntent)
                     }
                 }
