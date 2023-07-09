@@ -21,7 +21,7 @@ class InsulinMedActivity : AppCompatActivity() {
             startActivity(backIntent)
         }
         val insulin = ArrayList <String> ()
-        Firebase.firestore.collection("medications").whereEqualTo("category", "pills").get().
+        Firebase.firestore.collection("medications").whereEqualTo("category", "insulin").get().
         addOnSuccessListener { medInsulin ->
             for (ins in medInsulin) {
                 val item = ins.id
