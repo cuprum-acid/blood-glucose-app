@@ -12,7 +12,7 @@ class ListExercisesActivity : AppCompatActivity() {
 
         val backButton: Button = findViewById(R.id.button_back_exer)
         backButton.setOnClickListener {
-            val backIntent = Intent(this@ListExercisesActivity, ProductActivity::class.java)
+            val backIntent = Intent(this@ListExercisesActivity, ListMedsActivity::class.java)
             startActivity(backIntent)
         }
 

@@ -132,42 +132,50 @@
         app:layout_constraintTop_toBottomOf="@+id/button_p_and_s_list_pr"
         app:layout_constraintVertical_bias="0.0" />
 
-    <Button
-        android:id="@+id/button_back_product_list"
-        style="@style/Base.Theme.BloodGlucose"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_gravity="bottom"
-        android:layout_marginBottom="40dp"
-        android:background="@drawable/orange_rectangle"
-        android:text="@string/string_back"
-        android:textColor="@color/color_text"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button_next_product_list"
-        app:layout_constraintHorizontal_bias="0.819"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_plus_product_list"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <Button
-        android:id="@+id/button_next_product_list"
-        style="@style/Base.Theme.BloodGlucose"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_gravity="bottom"
-        android:layout_marginBottom="40dp"
-        android:background="@drawable/orange_rectangle"
-        android:text="@string/string_next"
-        android:textColor="@color/color_text"
-        android:textSize="24sp"
-        android:textStyle="bold"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="412dp"
+        android:layout_height="59dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.808"
+        app:layout_constraintHorizontal_bias="0.555"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_plus_product_list"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.3">
+
+        <Button
+            android:id="@+id/button_back_product_list"
+            style="@style/Base.Theme.BloodGlucose"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="4dp"
+            android:background="@drawable/orange_rectangle"
+            android:text="@string/string_back"
+            android:textColor="@color/color_text"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/button_next_product_list"
+            app:layout_constraintHorizontal_bias="0.812"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/button_next_product_list"
+            style="@style/Base.Theme.BloodGlucose"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="4dp"
+            android:background="@drawable/orange_rectangle"
+            android:text="@string/string_next"
+            android:textColor="@color/color_text"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.803"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
