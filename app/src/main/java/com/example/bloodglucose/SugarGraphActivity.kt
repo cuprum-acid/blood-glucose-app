@@ -16,6 +16,9 @@ import com.google.firebase.ktx.Firebase
 import java.util.Calendar
 import java.util.Date
 import java.util.Locale
+import androidx.core.content.FileProvider
+import java.io.File
+import java.io.FileOutputStream
 
 
 data class DataPoint(val datetime: Date, val value: Int) {
@@ -42,6 +45,8 @@ class SugarGraphActivity : AppCompatActivity() {
             val backIntent = Intent(this@SugarGraphActivity, ProfileActivity::class.java)
             startActivity(backIntent)
         }
+
+        val exportButton: Button = findViewById(R.id.button_graph_export)
 
         val chart: LineChart = findViewById(R.id.chart)
         val db = Firebase.firestore.collection("users").document(USER_ID)
@@ -92,6 +97,35 @@ class SugarGraphActivity : AppCompatActivity() {
 
                 chart.xAxis.valueFormatter = formatter
                 chart.invalidate() // Refresh the chart
+
+                exportButton.setOnClickListener {
+                    // Convert data to CSV string
+                    val csvHeader = "Date, Average Sugar Level\n"
+                    val csvValues = averageDataPoints.joinToString(separator = "\n") { dataPoint ->
+                        "\"${SimpleDateFormat("MM-dd-yyyy", Locale.US).format(dataPoint.datetime)}\", ${dataPoint.value}"
+                    }
+                    val csvData = csvHeader + csvValues
+
+                    // Save the CSV data to a file
+                    val directory = getExternalFilesDir(null)
+                    val file = File(directory, "export.csv")
+                    FileOutputStream(file).bufferedWriter().use { it.write(csvData) }
+
+
+                    println("packageName $packageName")
+                    // Create a URI for the file using FileProvider, and grant URI permissions to the receiver
+                    val fileUri = FileProvider.getUriForFile(this, "$packageName.fileprovider", file)
+                    val sendIntent = Intent().apply {
+                        action = Intent.ACTION_SEND
+                        putExtra(Intent.EXTRA_STREAM, fileUri)
+                        type = "text/csv"
+                        addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+                    }
+
+                    // Create a chooser and start the activity
+                    val chooserIntent = Intent.createChooser(sendIntent, "Share CSV via")
+                    startActivity(chooserIntent)
+                }
             }
             .addOnFailureListener { exception ->
                 println("Error getting documents: $exception")
