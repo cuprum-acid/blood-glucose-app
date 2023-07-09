@@ -64,6 +64,7 @@
         android:textStyle="bold"/>
 
     <ImageView
+        android:id="@+id/imageView"
         android:layout_width="311dp"
         android:layout_height="200dp"
         app:layout_constraintBottom_toBottomOf="@+id/rectangle_text_advice"
