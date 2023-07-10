@@ -35,24 +35,122 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.106" />
 
+    <!--    <TextView-->
+    <!--        android:id="@+id/textView2"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:background="@drawable/grey_rectangle"-->
+    <!--        android:text="@string/measure_your_sugar_level"-->
+    <!--        android:textColor="@color/color_text"-->
+    <!--        android:textSize="24sp"-->
+    <!--        app:layout_constraintBottom_toTopOf="@+id/string_advice_today"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/rectangle_or_profile"-->
+    <!--        app:layout_constraintVertical_bias="0.4" />-->
+
     <View
         android:id="@+id/rectangle_main_inf_today"
         android:layout_width="311dp"
-        android:layout_height="208dp"
+        android:layout_height="180dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:background="@drawable/grey_rectangle"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rectangle_or_profile" />
+
+    <!--    measure_your_sugar_level_n_take_your_medications_n_get_some_exercise-->
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/grey_rectangle"
+        android:text="@string/measure_your_sugar_level"
+        android:textColor="@color/color_text"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/rectangle_main_inf_today"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_main_inf_today"
+        app:layout_constraintTop_toTopOf="@+id/rectangle_main_inf_today" />
+
+    <View
+        android:id="@+id/ellipse_hight_calendar1"
+        android:layout_width="14dp"
+        android:layout_height="14dp"
+        android:layout_marginTop="38dp"
+        android:background="@drawable/ellipse_hight_level"
+        app:layout_constraintBottom_toTopOf="@+id/ellipse_hight_calendar2"
+        app:layout_constraintEnd_toStartOf="@+id/textView2"
+        app:layout_constraintHorizontal_bias="0.725"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_main_inf_today"
+        app:layout_constraintTop_toTopOf="@+id/rectangle_main_inf_today"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <View
+        android:id="@+id/ellipse_hight_calendar2"
+        android:layout_width="14dp"
+        android:layout_height="14dp"
+        android:layout_marginBottom="33dp"
+        android:background="@drawable/ellipse_hight_level"
+        app:layout_constraintBottom_toTopOf="@+id/ellipse_hight_calendar"
+        app:layout_constraintEnd_toStartOf="@+id/textView3"
+        app:layout_constraintHorizontal_bias="0.714"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_main_inf_today" />
+
+    <View
+        android:id="@+id/ellipse_hight_calendar"
+        android:layout_width="14dp"
+        android:layout_height="14dp"
+        android:layout_marginBottom="34dp"
+        android:background="@drawable/ellipse_hight_level"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangle_main_inf_today"
+        app:layout_constraintEnd_toStartOf="@+id/textView4"
+        app:layout_constraintHorizontal_bias="0.714"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_main_inf_today" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/grey_rectangle"
+        android:text="@string/take_your_medications"
+        android:textColor="@color/color_text"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/rectangle_main_inf_today"
+        app:layout_constraintHorizontal_bias="0.39"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_main_inf_today"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/grey_rectangle"
+        android:text="@string/get_some_exercise"
+        android:textColor="@color/color_text"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangle_main_inf_today"
+        app:layout_constraintEnd_toEndOf="@+id/rectangle_main_inf_today"
+        app:layout_constraintHorizontal_bias="0.286"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_main_inf_today"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/string_advice_today"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:text="@string/string_advice_today"
+        android:layout_marginTop="20dp"
+        android:text="@string/your_marks"
         android:textColor="@color/color_text"
         android:textSize="36sp"
         android:textStyle="bold"
@@ -60,53 +158,97 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rectangle_main_inf_today" />
 
-    <View
-        android:id="@+id/rectangle_advice_inf_today"
+
+    <Button
+        android:id="@+id/button_today_products"
+        style="@style/Base.Theme.BloodGlucose"
         android:layout_width="311dp"
-        android:layout_height="122dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/beige_rectangle"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/grey_rectangle"
+        android:text="@string/products"
+        android:textColor="@color/color_text"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/string_advice_today" />
 
     <Button
-        android:id="@+id/button_today_advice"
+        android:id="@+id/button_today_meds"
         style="@style/Base.Theme.BloodGlucose"
-        android:layout_width="150dp"
+        android:layout_width="311dp"
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/orange_rectangle"
-        android:text="@string/string_read_more"
+        android:background="@drawable/grey_rectangle"
+        android:text="@string/medications"
         android:textColor="@color/color_text"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.808"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rectangle_advice_inf_today" />
+        app:layout_constraintTop_toBottomOf="@+id/button_today_products" />
 
     <Button
-        android:id="@+id/button_home_today"
+        android:id="@+id/button_today_exercises"
         style="@style/Base.Theme.BloodGlucose"
-        android:layout_width="150dp"
+        android:layout_width="311dp"
         android:layout_height="50dp"
-        android:layout_marginStart="40dp"
         android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/orange_rectangle"
-        android:text="@string/string_back"
+        android:background="@drawable/grey_rectangle"
+        android:text="@string/exercises"
         android:textColor="@color/color_text"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button_today_advice"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rectangle_advice_inf_today" />
+        app:layout_constraintTop_toBottomOf="@+id/button_today_meds"
+        app:layout_constraintVertical_bias="0.0" />
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="412dp"
+        android:layout_height="59dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_today_exercises">
+
+        <Button
+            android:id="@+id/button_today_advice"
+            style="@style/Base.Theme.BloodGlucose"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="4dp"
+            android:background="@drawable/orange_rectangle"
+            android:text="@string/string_advice"
+            android:textColor="@color/color_text"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.812"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/button_home_today"
+            style="@style/Base.Theme.BloodGlucose"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginBottom="4dp"
+            android:background="@drawable/orange_rectangle"
+            android:text="@string/string_back"
+            android:textColor="@color/color_text"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/button_today_advice"
+            app:layout_constraintHorizontal_bias="0.478"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
     <!--    <Button-->
     <!--        android:id="@+id/button_home_today"-->
     <!--        style="@style/Base.Theme.BloodGlucose"-->

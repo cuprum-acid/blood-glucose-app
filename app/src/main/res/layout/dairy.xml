@@ -44,10 +44,19 @@
         android:layout_marginStart="50dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="50dp"
-        android:background="@drawable/grey_rectangle"
+        android:background="@drawable/dark_beige_rectangle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rectangle_or_profile" />
+
+    <TextView
+        android:layout_width="311dp"
+        android:layout_height="400dp"
+        app:layout_constraintBottom_toBottomOf="@+id/listView"
+        app:layout_constraintEnd_toEndOf="@+id/listView"
+        app:layout_constraintStart_toStartOf="@+id/listView"
+        app:layout_constraintTop_toTopOf="@+id/listView"
+        android:textColor="@color/color_text" />
 
     <Button
         android:id="@+id/button_back_dairy"
