@@ -146,7 +146,8 @@
         app:layout_constraintBottom_toBottomOf="@+id/rectangle_today_profile"
         app:layout_constraintEnd_toEndOf="@+id/rectangle_today_profile"
         app:layout_constraintStart_toEndOf="@+id/string_sugar_level_graph_profile"
-        app:layout_constraintTop_toTopOf="@+id/rectangle_today_profile" />
+        app:layout_constraintTop_toTopOf="@+id/rectangle_today_profile"
+        app:layout_constraintVertical_bias="0.444" />
 
     <Button
         android:id="@+id/button_calendar_profile"

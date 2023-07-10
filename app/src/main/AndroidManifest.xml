@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
     <uses-permission android:name="android.permission.READ_CALENDAR" />
     <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <application
 
         android:allowBackup="true"
@@ -40,6 +41,10 @@
         <activity android:name=".CardioExerActivity"></activity>
         <activity android:name=".StaticExerActivity"></activity>
         <activity android:name=".PowerExerActivity"></activity>
+
+        <activity android:name=".TodayProductsActivity"></activity>
+        <activity android:name=".TodayMedsActivity"></activity>
+        <activity android:name=".TodayExercisesActivity"></activity>
         <activity
             android:name=".MainActivity"
             android:exported="true">

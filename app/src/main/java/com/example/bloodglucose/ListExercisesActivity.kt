@@ -19,7 +19,6 @@ class ListExercisesActivity : AppCompatActivity() {
         val nextButton: Button = findViewById(R.id.button_next_exer)
         nextButton.setOnClickListener {
             val nextIntent = Intent(this@ListExercisesActivity, ProfileActivity::class.java)
-            //TODO: add function to save data by this button
             startActivity(nextIntent)
         }
 
