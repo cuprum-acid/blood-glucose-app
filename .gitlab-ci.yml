@@ -47,7 +47,7 @@ assembleDebug:
   artifacts:
     paths:
       # When SWP course team will fix artifact size issue, change to app-debug.apk
-      - app/build/outputs/apk/debug/output-metadata.json
+      - app/build/outputs/apk/debug/app-debug.apk
 
 # Run all tests, if any fails, interrupt the pipeline(fail it)
 debugTests:
