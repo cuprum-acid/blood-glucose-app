@@ -20,7 +20,7 @@ class AdviceActivity : AppCompatActivity() {
             val homeIntent = Intent(this@AdviceActivity, TodayActivity::class.java)
             startActivity(homeIntent)
         }
-        val tips = ArrayList <String> ()
+        /*val tips = ArrayList <String> ()
         Firebase.firestore.collection("medications").whereEqualTo("category", "pills").get().
         addOnSuccessListener { advice ->
             for (tip in advice) {
@@ -63,7 +63,7 @@ class AdviceActivity : AppCompatActivity() {
             .addOnFailureListener{ exception ->
                 println("Error getting documents: $exception")
 
-            }
+            }*/
     }
 
 
