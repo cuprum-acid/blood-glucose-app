@@ -24,55 +24,69 @@ class PastrSweetsActivity : AppCompatActivity() {
         // Create a list of sweet products
         val sweetProducts = ArrayList<String>()
 
-
+        // make a request for basic products
         Firebase.firestore.collection("foods")
             .whereEqualTo("category", "pastries and sweets").get()
             .addOnSuccessListener { documents ->
 
-                // save products in array
-                for (document in documents) {
-                    val product = document.id
-                    sweetProducts.add(product)
-                }
+                // make a request for user-defined products
+                Firebase.firestore.collection("users")
+                    .document(USER_ID).collection("userAddedFoods")
+                    .whereEqualTo("category", "pastries and sweets").get()
+                    .addOnSuccessListener { documents2 ->
 
-                // Find the ListView in your layout
-                val listView: ListView = findViewById(R.id.listView)
+                        // save products in array
+                        for (document in documents) {
+                            val product = document.id
+                            sweetProducts.add(product)
+                        }
 
-                // Create an ArrayAdapter
-                val arrayAdapter =
-                    ArrayAdapter(this, android.R.layout.simple_list_item_1, sweetProducts)
+                        for (document in documents2) {
+                            val product = document.id
+                            sweetProducts.add(product)
+                        }
 
-                // Set the ListView's adapter to the ArrayAdapter
-                listView.adapter = arrayAdapter
+                        // Find the ListView in your layout
+                        val listView: ListView = findViewById(R.id.listView)
 
+                        // Create an ArrayAdapter
+                        val arrayAdapter =
+                            ArrayAdapter(this, android.R.layout.simple_list_item_1, sweetProducts)
 
-                // Set the item click listener
-                listView.setOnItemClickListener { parent, view, position, id ->
-                    // Get the selected item
-                    val selectedItem = parent.getItemAtPosition(position) as String
-
-                    // save the chosen item and go back to the previous screen:
-
-                    val foodsCollection = Firebase.firestore.collection("users").document(USER_ID)
-                        .collection("takenFoods")
-
-                    // create a hashmap of values to be uploaded to the database
-                    val product = hashMapOf(
-                        "datetime" to FieldValue.serverTimestamp(),
-                        "foodId" to selectedItem
-                    )
-
-                    foodsCollection.add(product)
+                        // Set the ListView's adapter to the ArrayAdapter
+                        listView.adapter = arrayAdapter
 
 
-                    val backIntent = Intent(this@PastrSweetsActivity, ProductActivity::class.java)
-                    startActivity(backIntent)
+                        // Set the item click listener
+                        listView.setOnItemClickListener { parent, view, position, id ->
+                            // Get the selected item
+                            val selectedItem = parent.getItemAtPosition(position) as String
 
-                }
+                            // save the chosen item and go back to the previous screen:
+
+                            val foodsCollection = Firebase.firestore.collection("users").document(USER_ID)
+                                .collection("takenFoods")
+
+                            // create a hashmap of values to be uploaded to the database
+                            val product = hashMapOf(
+                                "datetime" to FieldValue.serverTimestamp(),
+                                "foodId" to selectedItem
+                            )
+
+                            foodsCollection.add(product)
+
+
+                            val backIntent = Intent(this@PastrSweetsActivity, ProductActivity::class.java)
+                            startActivity(backIntent)
+
+                        }
+                    }
+                    .addOnFailureListener { exception ->
+                        println("Error getting documents: $exception")
+                    }
             }
             .addOnFailureListener { exception ->
                 println("Error getting documents: $exception")
             }
-
     }
 }

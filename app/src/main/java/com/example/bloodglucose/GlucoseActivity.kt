@@ -18,7 +18,6 @@ import com.google.firebase.firestore.FieldValue
 
 val USER_ID = "TestUser"
 
-val glucoseLevels = ArrayList<Int>()
 
 class GlucoseActivity : AppCompatActivity() {
     private lateinit var binding: GlucoseBinding
@@ -31,9 +30,6 @@ class GlucoseActivity : AppCompatActivity() {
             val glucoseLevelText = binding.glucoseLevelEditText.text.toString()
             if (glucoseLevelText.isNotEmpty()) {
                 val glucoseLevel = glucoseLevelText.toInt()
-
-                // Add the glucose level to the array
-                glucoseLevels.add(glucoseLevel)
 
                 // Store the array in Firebase
                 val database = Firebase.firestore
