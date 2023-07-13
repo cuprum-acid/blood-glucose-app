@@ -21,7 +21,8 @@ class CardioExerActivity : AppCompatActivity() {
             startActivity(backIntent)
         }
         val cardioEx = ArrayList <String> ()
-        Firebase.firestore.collection("exercises").whereEqualTo("category", "cardio").get().
+        Firebase.firestore.collection("exercises")
+            .whereEqualTo("category", "cardio").get().
                 addOnSuccessListener { exercises ->
                     for (exercise in exercises) {
                         val item = exercise.id
