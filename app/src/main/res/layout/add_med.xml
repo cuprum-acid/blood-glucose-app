@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/screen_background">
@@ -42,49 +43,38 @@
         android:layout_width="310dp"
         android:layout_height="70dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="32dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/beige_rectangle"
-        app:layout_constraintBottom_toTopOf="@+id/string_title"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/type_exer" />
 
     <TextView
         android:id="@+id/type_exer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:text="@string/string_type"
         android:textColor="@color/color_text"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/spinner_add_meds"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.144"
+        app:layout_constraintHorizontal_bias="0.142"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rectangle_or_profile"
-        app:layout_constraintVertical_bias="0.25" />
+        app:layout_constraintTop_toBottomOf="@+id/rectangle_or_profile" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/input_meds"
         android:layout_width="311dp"
         android:layout_height="66dp"
-        android:layout_marginBottom="128dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/beige_rectangle"
         android:hint="@string/input_medication"
         android:textColorHint="@color/grey_text"
-        app:layout_constraintBottom_toTopOf="@+id/button_add_meds_back"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/glucose_level_edit_text"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="16dp"
-            android:textColor="@color/color_text">
-
-        </com.google.android.material.textfield.TextInputEditText>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/string_title">
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -109,21 +99,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
         android:text="@string/string_title"
         android:textColor="@color/color_text"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/input_meds"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.14"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_add_meds" />
 
     <Button
         android:id="@+id/button_add_meds_submit"
         style="@style/Base.Theme.BloodGlucose"
         android:layout_width="150dp"
         android:layout_height="50dp"
+        android:layout_marginBottom="48dp"
         android:background="@drawable/orange_rectangle"
         android:text="@string/string_submit"
         android:textColor="@color/color_text"
@@ -131,10 +122,23 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.808"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/input_meds"
-        app:layout_constraintVertical_bias="0.731" />
+        app:layout_constraintHorizontal_bias="0.18"
+        app:layout_constraintStart_toEndOf="@+id/button_add_meds_back" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/glucose_level_edit_text"
+        android:layout_width="286dp"
+        android:layout_height="60dp"
+        android:hint="@string/input_medication"
+        android:textColor="@color/color_text"
+        android:textColorHint="@color/color_text"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/input_meds"
+        app:layout_constraintEnd_toEndOf="@+id/input_meds"
+        app:layout_constraintStart_toStartOf="@+id/input_meds"
+        app:layout_constraintTop_toTopOf="@+id/input_meds">
+
+    </com.google.android.material.textfield.TextInputEditText>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

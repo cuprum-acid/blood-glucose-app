@@ -70,6 +70,16 @@
     <string name="today_products">Today\'s products</string>
     <string name="today_s_medications">Today\'s medications</string>
     <string name="today_s_exercises">Today\'s exercises</string>
+    <string name="calories">Calories</string>
+    <string name="proteins">Proteins</string>
+    <string name="fats">Fats</string>
+    <string name="carbohydrates">Carbohydrates</string>
+    <string name="proteins_today">Proteins:</string>
+    <string name="fats_today">Fats:</string>
+    <string name="carbs_today">Carbs:</string>
+    <string name="calories_today">Calories:</string>
+    <string name="bread_units_today">Bread units:</string>
+    <string name="burnt_calories">Burnt calories</string>
     <string-array name="add_med">
         <item>Pills</item>
         <item>Insulin syringe</item>
