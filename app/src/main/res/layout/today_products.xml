@@ -79,7 +79,7 @@
 
         <TextView
             android:id="@+id/textView8"
-            android:layout_width="80dp"
+            android:layout_width="82dp"
             android:layout_height="30dp"
             android:layout_marginStart="12dp"
             android:text="@string/proteins_today"
@@ -91,6 +91,7 @@
             app:layout_constraintTop_toTopOf="@+id/textView6" />
 
         <TextView
+            android:id ="@+id/textProt"
             android:layout_width="40dp"
             android:layout_height="30dp"
             android:layout_marginStart="5dp"
@@ -140,6 +141,7 @@
             app:layout_constraintTop_toTopOf="@+id/textView7" />
 
         <TextView
+            android:id ="@+id/fatView"
             android:layout_width="40dp"
             android:layout_height="30dp"
             android:layout_marginStart="5dp"
@@ -188,6 +190,7 @@
             app:layout_constraintTop_toTopOf="@+id/textView10" />
 
         <TextView
+            android:id ="@+id/carView"
             android:layout_width="40dp"
             android:layout_height="30dp"
             android:layout_marginStart="5dp"
@@ -239,6 +242,7 @@
             app:layout_constraintTop_toTopOf="@+id/textView12" />
 
         <TextView
+            android:id ="@+id/calView"
             android:layout_width="40dp"
             android:layout_height="30dp"
             android:layout_marginStart="5dp"
@@ -286,6 +290,7 @@
             app:layout_constraintTop_toTopOf="@+id/textView14" />
 
         <TextView
+            android:id ="@+id/buView"
             android:layout_width="60dp"
             android:layout_height="30dp"
             android:layout_marginStart="5dp"
