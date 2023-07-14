@@ -68,35 +68,48 @@
 
     </RelativeLayout>
 
-    <Button
-        android:id="@+id/button_graph_export"
-        style="@style/Base.Theme.BloodGlucose"
-        android:layout_width="150dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="411dp"
         android:layout_height="50dp"
-        android:background="@drawable/orange_rectangle"
-        android:text="@string/string_export"
-        android:textColor="@color/color_text"
-        android:textSize="24sp"
-        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.808"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rectangle_text_advice" />
+        app:layout_constraintTop_toBottomOf="@+id/rectangle_text_advice">
 
-    <Button
-        android:id="@+id/button_graph_back"
-        style="@style/Base.Theme.BloodGlucose"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:background="@drawable/orange_rectangle"
-        android:text="@string/string_back"
-        android:textColor="@color/color_text"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button_graph_export"
-        app:layout_constraintHorizontal_bias="0.819"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rectangle_text_advice" />
+        <Button
+            android:id="@+id/button_graph_export"
+            style="@style/Base.Theme.BloodGlucose"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:background="@drawable/orange_rectangle"
+            android:text="@string/string_export"
+            android:textColor="@color/color_text"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.808"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/button_graph_back"
+            style="@style/Base.Theme.BloodGlucose"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:background="@drawable/orange_rectangle"
+            android:text="@string/string_back"
+            android:textColor="@color/color_text"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/button_graph_export"
+            app:layout_constraintHorizontal_bias="0.803"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

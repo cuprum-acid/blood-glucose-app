@@ -209,8 +209,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
-        android:layout_width="412dp"
-        android:layout_height="59dp"
+        android:layout_width="411dp"
+        android:layout_height="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -221,7 +221,6 @@
             style="@style/Base.Theme.BloodGlucose"
             android:layout_width="150dp"
             android:layout_height="50dp"
-            android:layout_marginBottom="4dp"
             android:background="@drawable/orange_rectangle"
             android:text="@string/string_advice"
             android:textColor="@color/color_text"
@@ -230,7 +229,9 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.812"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
 
         <Button
             android:id="@+id/button_home_today"
@@ -238,7 +239,6 @@
             android:layout_width="150dp"
             android:layout_height="50dp"
             android:layout_marginStart="40dp"
-            android:layout_marginBottom="4dp"
             android:background="@drawable/orange_rectangle"
             android:text="@string/string_back"
             android:textColor="@color/color_text"
@@ -246,8 +246,9 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/button_today_advice"
-            app:layout_constraintHorizontal_bias="0.478"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
     </androidx.constraintlayout.widget.ConstraintLayout>
     <!--    <Button-->
     <!--        android:id="@+id/button_home_today"-->

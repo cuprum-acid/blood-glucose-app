@@ -45,8 +45,8 @@
         android:layout_marginTop="65dp"
         android:background="@drawable/beige_rectangle"
         android:hint="@string/input_glucose_level"
-        android:textSize="16sp"
         android:textColorHint="@color/grey_text"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/string_profile">
@@ -58,7 +58,7 @@
         style="@style/Base.Theme.BloodGlucose"
         android:layout_width="150dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="40dp"
         android:background="@drawable/orange_rectangle"
         android:text="@string/string_back"
         android:textColor="@color/color_text"
@@ -66,7 +66,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rectangle_comment_add_glucoze_level"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/button_submit_glucose"
@@ -74,17 +77,14 @@
         android:layout_width="150dp"
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
-        android:layout_marginBottom="168dp"
         android:background="@drawable/orange_rectangle"
         android:text="@string/string_submit"
         android:textColor="@color/color_text"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/glucose_level"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/glucose_level" />
 
     <TextView
         android:layout_width="286dp"
@@ -101,8 +101,8 @@
         android:layout_width="311dp"
         android:layout_height="160dp"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
         android:background="@drawable/grey_rectangle"
-        app:layout_constraintBottom_toTopOf="@+id/button_glucose_back"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_submit_glucose" />
@@ -112,9 +112,9 @@
         android:layout_width="286dp"
         android:layout_height="66dp"
         android:hint="@string/input_glucose_level"
-        android:textColorHint="@color/color_text"
         android:inputType="numberDecimal"
         android:textColor="@color/color_text"
+        android:textColorHint="@color/color_text"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/glucose_level"
         app:layout_constraintEnd_toEndOf="@+id/glucose_level"

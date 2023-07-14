@@ -80,22 +80,6 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <Button
-        android:id="@+id/button_add_products_back"
-        style="@style/Base.Theme.BloodGlucose"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="36dp"
-        android:background="@drawable/orange_rectangle"
-        android:text="@string/string_back"
-        android:textColor="@color/color_text"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.195"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <TextView
         android:id="@+id/string_title"
         android:layout_width="wrap_content"
@@ -111,22 +95,49 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinner_add_products" />
 
-    <Button
-        android:id="@+id/button_add_products_submit"
-        style="@style/Base.Theme.BloodGlucose"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:background="@drawable/orange_rectangle"
-        android:text="@string/string_submit"
-        android:textColor="@color/color_text"
-        android:textSize="24sp"
-        android:textStyle="bold"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="410dp"
+        android:layout_height="49dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.808"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/input_products"
-        app:layout_constraintVertical_bias="0.887" />
+        app:layout_constraintTop_toBottomOf="@+id/seekBar_calories_add_pr">
+
+        <Button
+            android:id="@+id/button_add_products_back"
+            style="@style/Base.Theme.BloodGlucose"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:background="@drawable/orange_rectangle"
+            android:text="@string/string_back"
+            android:textColor="@color/color_text"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/button_add_products_submit"
+            app:layout_constraintHorizontal_bias="0.816"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <Button
+            android:id="@+id/button_add_products_submit"
+            style="@style/Base.Theme.BloodGlucose"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:background="@drawable/orange_rectangle"
+            android:text="@string/string_submit"
+            android:textColor="@color/color_text"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.811"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
         android:id="@+id/string_carbs"
@@ -249,7 +260,6 @@
         android:layout_marginTop="10dp"
         android:valueFrom="0"
         android:valueTo="100"
-        app:layout_constraintBottom_toTopOf="@+id/button_add_products_back"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.56"
         app:layout_constraintStart_toStartOf="parent"
