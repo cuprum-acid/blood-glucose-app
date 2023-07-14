@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Blood Glucose</string>
-    <!-- add_med strings -->
     <string name="string_next">Next</string>
     <string name="string_plus">+</string>
     <string name="string_home">Home</string>
@@ -59,7 +58,6 @@
     <string name="input_exercise">input exercise</string>
     <string name="input_medication">input medication</string>
     <string name="input_product">input product</string>
-    <string name="measure_your_sugar_level_n_take_your_medications_n_get_some_exercise">Measure your sugar level\n Take your medications\n Get some exercise</string>
     <string name="measure_your_sugar_level">Measure your sugar level</string>
     <string name="take_your_medications">Take your medications</string>
     <string name="get_some_exercise">Get some exercise</string>
