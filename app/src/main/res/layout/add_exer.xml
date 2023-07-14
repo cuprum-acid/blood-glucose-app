@@ -60,7 +60,7 @@
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.142"
+        app:layout_constraintHorizontal_bias="0.12"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rectangle_or_profile" />
 
@@ -81,7 +81,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="410dp"
-        android:layout_height="49dp"
+        android:layout_height="50dp"
         android:layout_marginBottom="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -135,7 +135,7 @@
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.14"
+        app:layout_constraintHorizontal_bias="0.118"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinner_add_exer" />
 
@@ -160,25 +160,39 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:text="@string/burnt_calories"
+        android:text="@string/burnt_calories2"
         android:textColor="@color/color_text"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.192"
+        app:layout_constraintHorizontal_bias="0.178"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_exer" />
+
+    <TextView
+        android:id="@+id/string_current_calories"
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/color_text"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/string_calories"
         app:layout_constraintTop_toBottomOf="@+id/input_exer" />
 
     <SeekBar
         android:id="@+id/seekBar_calories_add_pr"
-        android:layout_width="320dp"
-        android:layout_height="wrap_content"
+        android:layout_width="311dp"
+        android:layout_height="18dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="14dp"
+        android:layout_marginTop="20dp"
         android:valueFrom="0"
-        android:valueTo="100"
+        android:valueTo="500"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.56"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/string_calories" />
 

@@ -80,6 +80,12 @@
     <string name="calories_today">Calories:</string>
     <string name="bread_units_today">Bread units:</string>
     <string name="burnt_calories">Burnt calories</string>
+    <string name="burnt_calories1">Burnt calories:</string>
+    <string name="calories1">Calories:</string>
+    <string name="proteins1">Proteins:</string>
+    <string name="fats1">Fats:</string>
+    <string name="carbohydrates1">Carbohydrates:</string>
+    <string name="burnt_calories2">Burnt calories:</string>
     <string-array name="add_med">
         <item>Pills</item>
         <item>Insulin syringe</item>

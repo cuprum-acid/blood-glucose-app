@@ -45,8 +45,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:background="@drawable/dark_beige_rectangle"
-        android:textColor="@color/color_text"
         android:clickable="true"
+        android:textColor="@color/color_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/type_products" />
@@ -62,7 +62,7 @@
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.142"
+        app:layout_constraintHorizontal_bias="0.12"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rectangle_or_profile" />
 
@@ -91,13 +91,13 @@
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.138"
+        app:layout_constraintHorizontal_bias="0.118"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinner_add_products" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="410dp"
-        android:layout_height="49dp"
+        android:layout_height="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -145,13 +145,28 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
-        android:text="@string/carbohydrates"
+        android:text="@string/carbohydrates1"
         android:textColor="@color/color_text"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.183"
+        app:layout_constraintHorizontal_bias="0.16"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_products" />
+
+    <TextView
+        android:id="@+id/string_current_carbs"
+        android:layout_width="wrap_content"
+        android:layout_height="28dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/color_text"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/string_carbs"
         app:layout_constraintTop_toBottomOf="@+id/input_products" />
 
     <SeekBar
@@ -173,13 +188,28 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
-        android:text="@string/fats"
+        android:text="@string/fats1"
         android:textColor="@color/color_text"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.137"
+        app:layout_constraintHorizontal_bias="0.114"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar_carbohydrates_add_pr" />
+
+    <TextView
+        android:id="@+id/string_current_fats"
+        android:layout_width="wrap_content"
+        android:layout_height="27dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/color_text"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/string_fats"
         app:layout_constraintTop_toBottomOf="@+id/seekBar_carbohydrates_add_pr" />
 
     <SeekBar
@@ -201,13 +231,28 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
-        android:text="@string/proteins"
+        android:text="@string/proteins1"
         android:textColor="@color/color_text"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.152"
+        app:layout_constraintHorizontal_bias="0.128"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar_fats_add_pr" />
+
+    <TextView
+        android:id="@+id/string_current_proteins"
+        android:layout_width="wrap_content"
+        android:layout_height="27dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/color_text"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/string_prots"
         app:layout_constraintTop_toBottomOf="@+id/seekBar_fats_add_pr" />
 
     <SeekBar
@@ -227,15 +272,14 @@
         android:id="@+id/glucose_level_edit_text"
         android:layout_width="286dp"
         android:layout_height="50dp"
-        android:textColor="@color/color_text"
         android:hint="@string/input_product"
+        android:textColor="@color/color_text"
         android:textColorHint="@color/color_text"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/input_products"
         app:layout_constraintEnd_toEndOf="@+id/input_products"
         app:layout_constraintStart_toStartOf="@+id/input_products"
-        app:layout_constraintTop_toTopOf="@+id/input_products">
-    </com.google.android.material.textfield.TextInputEditText>
+        app:layout_constraintTop_toTopOf="@+id/input_products" />
 
     <TextView
         android:id="@+id/string_calories"
@@ -243,13 +287,28 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
-        android:text="@string/calories"
+        android:text="@string/calories1"
         android:textColor="@color/color_text"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.151"
+        app:layout_constraintHorizontal_bias="0.127"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar_prots_add_pr" />
+
+    <TextView
+        android:id="@+id/string_current_cals"
+        android:layout_width="wrap_content"
+        android:layout_height="27dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/color_text"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/string_calories"
         app:layout_constraintTop_toBottomOf="@+id/seekBar_prots_add_pr" />
 
     <SeekBar
@@ -259,7 +318,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
         android:valueFrom="0"
-        android:valueTo="100"
+        android:valueTo="500"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.56"
         app:layout_constraintStart_toStartOf="parent"

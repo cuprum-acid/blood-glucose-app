@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.SeekBar
 import android.widget.Spinner
+import android.widget.TextView
 import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -17,6 +18,7 @@ class AddExerciseActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.add_exer)
+
 
         val backButton: Button = findViewById(R.id.button_add_exer_back)
         backButton.setOnClickListener {
@@ -38,24 +40,35 @@ class AddExerciseActivity : AppCompatActivity() {
 
         val inputExercise: TextInputEditText = findViewById(R.id.glucose_level_edit_text)
 
-
+        val valueTextView: TextView = findViewById(R.id.string_current_calories)
         val caloriesSeekBar: SeekBar = findViewById(R.id.seekBar_calories_add_pr)
 
         val submitButton: Button = findViewById(R.id.button_submit_exer)
+        val caloriesValue = caloriesSeekBar.progress
+        caloriesSeekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                // Update the text view with the selected value
+                valueTextView.text = progress.toString()
+            }
 
+            override fun onStartTrackingTouch(seekBar: SeekBar?) {
+                // Empty method implementation
+            }
+
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {
+                // Empty method implementation
+            }
+        })
 
         // when the user presses "submit" button
         submitButton.setOnClickListener {
             var selectedProductType = spinner.selectedItem.toString()
             val enteredExercise = inputExercise.text.toString()
 
-            val caloriesValue = caloriesSeekBar.progress
-
             // Store the data in Firebase
             val database = Firebase.firestore
 
             val ref = database.collection("users").document(USER_ID)
-
 
             selectedProductType =
                 if (selectedProductType == "Power exercises") {
@@ -66,15 +79,11 @@ class AddExerciseActivity : AppCompatActivity() {
                     "cardio"
                 }
 
-
             // create a hashmap of values to be uploaded to the database
             val exerciseItem = hashMapOf(
                 "calories" to caloriesValue,
                 "category" to selectedProductType,
             )
-
-
-
 
             ref.collection("userAddedExercises")
                 .document(enteredExercise)

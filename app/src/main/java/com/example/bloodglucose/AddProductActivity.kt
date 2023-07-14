@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.Spinner
 import android.widget.SeekBar
+import android.widget.TextView
 import android.util.Log
 import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.firestore.ktx.firestore
@@ -43,19 +44,60 @@ class AddProductActivity : AppCompatActivity() {
         val fatsSeekBar: SeekBar = findViewById(R.id.seekBar_fats_add_pr)
         val protsSeekBar: SeekBar = findViewById(R.id.seekBar_prots_add_pr)
         val caloriesSeekBar: SeekBar = findViewById(R.id.seekBar_calories_add_pr)
-
+        val carbsTextView: TextView = findViewById(R.id.string_current_carbs)
+        val protsTextView: TextView = findViewById(R.id.string_current_proteins)
+        val fatsTextView: TextView = findViewById(R.id.string_current_fats)
+        val calsTextView: TextView = findViewById(R.id.string_current_cals)
+        val carbsValue = carbsSeekBar.progress
+        val fatsValue = fatsSeekBar.progress
+        val protsValue = protsSeekBar.progress
+        val caloriesValue = caloriesSeekBar.progress
         val submitButton: Button = findViewById(R.id.button_add_products_submit)
+
+        protsSeekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                protsTextView.text = progress.toString()
+            }
+
+            override fun onStartTrackingTouch(seekBar: SeekBar?) {}
+
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {}
+        })
+
+        carbsSeekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                carbsTextView.text = progress.toString()
+            }
+
+            override fun onStartTrackingTouch(seekBar: SeekBar?) {}
+
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {}
+        })
+
+        fatsSeekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                fatsTextView.text = progress.toString()
+            }
+
+            override fun onStartTrackingTouch(seekBar: SeekBar?) {}
+
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {}
+        })
+
+        caloriesSeekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                calsTextView.text = progress.toString()
+            }
+
+            override fun onStartTrackingTouch(seekBar: SeekBar?) {}
+
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {}
+        })
 
         // when the user presses "submit" button
         submitButton.setOnClickListener {
             var selectedProductType = spinner.selectedItem.toString()
             val enteredProduct = inputProducts.text.toString()
-
-            val carbsValue = carbsSeekBar.progress
-            val fatsValue = fatsSeekBar.progress
-            val protsValue = protsSeekBar.progress
-            val caloriesValue = caloriesSeekBar.progress
-
 
             // Store the data in Firebase
             val database = Firebase.firestore
