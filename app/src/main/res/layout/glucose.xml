@@ -51,15 +51,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/string_profile">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/glucose_level_edit_text"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="16dp"
-            android:inputType="numberDecimal"
-            android:textColor="@color/color_text"
-            android:textSize="16sp"/>
-
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
@@ -96,8 +87,8 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:layout_width="311dp"
-        android:layout_height="160dp"
+        android:layout_width="286dp"
+        android:layout_height="136dp"
         android:textColor="@color/color_text"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/rectangle_comment_add_glucoze_level"
@@ -115,5 +106,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_submit_glucose" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/glucose_level_edit_text"
+        android:layout_width="286dp"
+        android:layout_height="66dp"
+        android:hint="@string/input_glucose_level"
+        android:textColorHint="@color/color_text"
+        android:inputType="numberDecimal"
+        android:textColor="@color/color_text"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/glucose_level"
+        app:layout_constraintEnd_toEndOf="@+id/glucose_level"
+        app:layout_constraintStart_toStartOf="@+id/glucose_level"
+        app:layout_constraintTop_toTopOf="@+id/glucose_level" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
