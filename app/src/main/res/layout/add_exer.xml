@@ -192,6 +192,7 @@
         android:layout_marginTop="20dp"
         android:valueFrom="0"
         android:valueTo="500"
+        android:max="500"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/string_calories" />
