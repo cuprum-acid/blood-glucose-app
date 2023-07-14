@@ -14,6 +14,8 @@ import com.example.bloodglucose.databinding.GlucoseBinding
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.FieldValue
+import android.graphics.Color
+import java.text.NumberFormat
 
 
 val USER_ID = "TestUser"
@@ -54,6 +56,8 @@ class GlucoseActivity : AppCompatActivity() {
 
                 // myRef.setValue(glucoseLevels)
 
+                analyzeGlucose(glucoseLevel)
+
                 // Clear the input field
                 binding.glucoseLevelEditText.text?.clear()
             }
@@ -80,4 +84,25 @@ class GlucoseActivity : AppCompatActivity() {
         }
         return false
     }
+
+    private fun displayAlert(alert: String) {
+        binding.glucoseAlert.text = alert
+    }
+
+    private fun analyzeGlucose(glucoseLevel: Int) {
+        if (glucoseLevel < 4) {
+            displayColoredAlert("Low glucose level", Color.RED)
+        } else if (glucoseLevel > 8) {
+            displayColoredAlert("High glucose level", Color.RED)
+        } else {
+            displayColoredAlert("Normal glucose level", Color.GREEN)
+        }
+    }
+
+    private fun displayColoredAlert(message: String, color: Int) {
+        binding.glucoseAlert.text = message
+        binding.glucoseAlert.setTextColor(color)
+    }
+
+
 }
