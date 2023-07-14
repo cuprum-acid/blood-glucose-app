@@ -20,51 +20,63 @@ class InsulinMedActivity : AppCompatActivity() {
             val backIntent = Intent(this@InsulinMedActivity, ListMedsActivity::class.java)
             startActivity(backIntent)
         }
+
         val insulin = ArrayList <String> ()
         Firebase.firestore.collection("medications")
             .whereEqualTo("category", "insulin").get()
             .addOnSuccessListener { medInsulin ->
-            for (ins in medInsulin) {
-                val item = ins.id
-                insulin.add(item)
-            }
 
-            val listView: ListView = findViewById(R.id.listView)
-            val arrayAdapter = ArrayAdapter(
-                this, android.R.layout.simple_list_item_1,
-                insulin
-            )
-            listView.adapter = arrayAdapter
-            println(insulin.size)
+                // make a request for user-defined products
+                Firebase.firestore.collection("users")
+                    .document(USER_ID).collection("userAddedMedications")
+                    .whereEqualTo("category", "insulin").get()
+                    .addOnSuccessListener { medInsulin2 ->
 
-            // Set the item click listener
-            listView.setOnItemClickListener { parent, view, position, id ->
-                // Get the selected item
-                val selectedItem = parent.getItemAtPosition(position) as String
+                        for (ins in medInsulin) {
+                            val item = ins.id
+                            insulin.add(item)
+                        }
 
-                // save the chosen item and go back to the previous screen:
+                        for (ins in medInsulin2) {
+                            val item = ins.id
+                            insulin.add(item)
+                        }
 
-                val insulinCollection =
-                    Firebase.firestore.collection("users").document(USER_ID)
-                        .collection("takenMedications")
+                        val listView: ListView = findViewById(R.id.listView)
+                        val arrayAdapter = ArrayAdapter(
+                            this, android.R.layout.simple_list_item_1,
+                            insulin
+                        )
+                        listView.adapter = arrayAdapter
+                        println("Insulin size: " + insulin.size)
 
-                // create a hashmap of values to be uploaded to the database
-                val product = hashMapOf(
-                    "datetime" to FieldValue.serverTimestamp(),
-                    "medicationId" to selectedItem
-                )
+                        // Set the item click listener
+                        listView.setOnItemClickListener { parent, view, position, id ->
+                            // Get the selected item
+                            val selectedItem = parent.getItemAtPosition(position) as String
 
-                insulinCollection.add(product)
+                            // save the chosen item and go back to the previous screen:
 
+                            val insulinCollection =
+                                Firebase.firestore.collection("users").document(USER_ID)
+                                    .collection("takenMedications")
 
-                val backIntent =
-                    Intent(this@InsulinMedActivity, ListMedsActivity::class.java)
-                startActivity(backIntent)
-            }
-        }
-            .addOnFailureListener{ exception ->
-                println("Error getting documents: $exception")
+                            // create a hashmap of values to be uploaded to the database
+                            val product = hashMapOf(
+                                "datetime" to FieldValue.serverTimestamp(),
+                                "medicationId" to selectedItem
+                            )
 
+                            insulinCollection.add(product)
+
+                            val backIntent =
+                                Intent(this@InsulinMedActivity, ListMedsActivity::class.java)
+                            startActivity(backIntent)
+                        }
+                    }
+                    .addOnFailureListener { exception ->
+                        println("Error getting documents: $exception")
+                    }
             }
     }
 }
