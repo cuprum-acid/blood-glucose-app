@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/screen_background">
@@ -86,15 +87,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/glucose_level" />
 
-    <TextView
-        android:layout_width="286dp"
-        android:layout_height="136dp"
-        android:textColor="@color/color_text"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/rectangle_comment_add_glucoze_level"
-        app:layout_constraintEnd_toEndOf="@+id/rectangle_comment_add_glucoze_level"
-        app:layout_constraintStart_toStartOf="@+id/rectangle_comment_add_glucoze_level"
-        app:layout_constraintTop_toTopOf="@+id/rectangle_comment_add_glucoze_level" />
 
     <View
         android:id="@+id/rectangle_comment_add_glucoze_level"
@@ -106,6 +98,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_submit_glucose" />
+
+    <TextView
+        android:id="@+id/glucose_alert"
+        android:layout_width="286dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textColor="@color/color_text"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="@+id/rectangle_comment_add_glucoze_level"
+        app:layout_constraintEnd_toEndOf="@+id/rectangle_comment_add_glucoze_level"
+        app:layout_constraintStart_toStartOf="@+id/rectangle_comment_add_glucoze_level"
+        app:layout_constraintTop_toTopOf="@+id/rectangle_comment_add_glucoze_level"
+        tools:textColor="#4CAF50"
+        tools:text="Normal" />
+
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/glucose_level_edit_text"
