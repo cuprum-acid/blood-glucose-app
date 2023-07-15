@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+
     <uses-permission android:name="android.permission.READ_CALENDAR" />
     <uses-permission android:name="android.permission.WRITE_CALENDAR" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
     <application
 
         android:allowBackup="true"
@@ -15,36 +17,36 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BloodGlucose"
         tools:targetApi="31">
-        <activity android:name=".ProfileActivity"></activity>
-        <activity android:name=".SugarGraphActivity"></activity>
-        <activity android:name=".TodayActivity"></activity>
-        <activity android:name=".CalendarActivity"></activity>
-        <activity android:name=".GlucoseActivity"></activity>
-        <activity android:name=".ProductActivity"></activity>
-        <activity android:name=".AdviceActivity"></activity>
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".SugarGraphActivity" />
+        <activity android:name=".TodayActivity" />
+        <activity android:name=".CalendarActivity" />
+        <activity android:name=".GlucoseActivity" />
+        <activity android:name=".ProductActivity" />
+        <activity android:name=".AdviceActivity" />
 
-        <activity android:name=".AddProductActivity"></activity>
-        <activity android:name=".DairyActivity"></activity>
-        <activity android:name=".GroceryActivity"></activity>
-        <activity android:name=".ListMedsActivity"></activity>
-        <activity android:name=".MeatFishActivity"></activity>
-        <activity android:name=".PastrSweetsActivity"></activity>
-        <activity android:name=".VegsFruitsActivity"></activity>
+        <activity android:name=".AddProductActivity" />
+        <activity android:name=".DairyActivity" />
+        <activity android:name=".GroceryActivity" />
+        <activity android:name=".ListMedsActivity" />
+        <activity android:name=".MeatFishActivity" />
+        <activity android:name=".PastrSweetsActivity" />
+        <activity android:name=".VegsFruitsActivity" />
 
-        <activity android:name=".AddExerciseActivity"></activity>
-        <activity android:name=".AddMedsActivity"></activity>
-        <activity android:name=".ListExercisesActivity"></activity>
+        <activity android:name=".AddExerciseActivity" />
+        <activity android:name=".AddMedsActivity" />
+        <activity android:name=".ListExercisesActivity" />
 
-        <activity android:name=".PillsMedActivity"></activity>
-        <activity android:name=".InsulinMedActivity"></activity>
+        <activity android:name=".PillsMedActivity" />
+        <activity android:name=".InsulinMedActivity" />
 
-        <activity android:name=".CardioExerActivity"></activity>
-        <activity android:name=".StaticExerActivity"></activity>
-        <activity android:name=".PowerExerActivity"></activity>
+        <activity android:name=".CardioExerActivity" />
+        <activity android:name=".StaticExerActivity" />
+        <activity android:name=".PowerExerActivity" />
 
-        <activity android:name=".TodayProductsActivity"></activity>
-        <activity android:name=".TodayMedsActivity"></activity>
-        <activity android:name=".TodayExercisesActivity"></activity>
+        <activity android:name=".TodayProductsActivity" />
+        <activity android:name=".TodayMedsActivity" />
+        <activity android:name=".TodayExercisesActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
