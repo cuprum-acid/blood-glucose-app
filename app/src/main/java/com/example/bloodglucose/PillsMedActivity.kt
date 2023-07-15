@@ -21,15 +21,13 @@ class PillsMedActivity : AppCompatActivity() {
             startActivity(backIntent)
         }
         val pills = ArrayList<String>()
-        Firebase.firestore.collection("medications")
-            .whereEqualTo("category", "pills").get()
+        Firebase.firestore.collection("medications").whereEqualTo("category", "pills").get()
             .addOnSuccessListener { medPills ->
 
 
-                // make a request for user-defined products
-                Firebase.firestore.collection("users")
-                    .document(USER_ID).collection("userAddedMedications")
-                    .whereEqualTo("category", "pills").get()
+                // Make a request for user-defined products
+                Firebase.firestore.collection("users").document(USER_ID)
+                    .collection("userAddedMedications").whereEqualTo("category", "pills").get()
                     .addOnSuccessListener { medPills2 ->
 
                         for (pill in medPills) {
@@ -44,8 +42,7 @@ class PillsMedActivity : AppCompatActivity() {
 
                         val listView: ListView = findViewById(R.id.listView)
                         val arrayAdapter = ArrayAdapter(
-                            this, android.R.layout.simple_list_item_1,
-                            pills
+                            this, android.R.layout.simple_list_item_1, pills
                         )
                         listView.adapter = arrayAdapter
                         println("Pills size: " + pills.size)
@@ -56,13 +53,13 @@ class PillsMedActivity : AppCompatActivity() {
                             // Get the selected item
                             val selectedItem = parent.getItemAtPosition(position) as String
 
-                            // save the chosen item and go back to the previous screen:
+                            // Save the chosen item and go back to the previous screen:
 
                             val pillsCollection =
                                 Firebase.firestore.collection("users").document(USER_ID)
                                     .collection("takenMedications")
 
-                            // create a hashmap of values to be uploaded to the database
+                            // Create a hashmap of values to be uploaded to the database
                             val product = hashMapOf(
                                 "datetime" to FieldValue.serverTimestamp(),
                                 "medicationId" to selectedItem
@@ -75,8 +72,7 @@ class PillsMedActivity : AppCompatActivity() {
                                 Intent(this@PillsMedActivity, ListMedsActivity::class.java)
                             startActivity(backIntent)
                         }
-                    }
-                    .addOnFailureListener { exception ->
+                    }.addOnFailureListener { exception ->
                         println("Error getting documents: $exception")
 
                     }

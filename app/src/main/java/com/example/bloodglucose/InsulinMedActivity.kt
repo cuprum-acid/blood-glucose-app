@@ -21,15 +21,13 @@ class InsulinMedActivity : AppCompatActivity() {
             startActivity(backIntent)
         }
 
-        val insulin = ArrayList <String> ()
-        Firebase.firestore.collection("medications")
-            .whereEqualTo("category", "insulin").get()
+        val insulin = ArrayList<String>()
+        Firebase.firestore.collection("medications").whereEqualTo("category", "insulin").get()
             .addOnSuccessListener { medInsulin ->
 
-                // make a request for user-defined products
-                Firebase.firestore.collection("users")
-                    .document(USER_ID).collection("userAddedMedications")
-                    .whereEqualTo("category", "insulin").get()
+                // Make a request for user-defined products
+                Firebase.firestore.collection("users").document(USER_ID)
+                    .collection("userAddedMedications").whereEqualTo("category", "insulin").get()
                     .addOnSuccessListener { medInsulin2 ->
 
                         for (ins in medInsulin) {
@@ -44,8 +42,7 @@ class InsulinMedActivity : AppCompatActivity() {
 
                         val listView: ListView = findViewById(R.id.listView)
                         val arrayAdapter = ArrayAdapter(
-                            this, android.R.layout.simple_list_item_1,
-                            insulin
+                            this, android.R.layout.simple_list_item_1, insulin
                         )
                         listView.adapter = arrayAdapter
                         println("Insulin size: " + insulin.size)
@@ -55,13 +52,13 @@ class InsulinMedActivity : AppCompatActivity() {
                             // Get the selected item
                             val selectedItem = parent.getItemAtPosition(position) as String
 
-                            // save the chosen item and go back to the previous screen:
+                            // Save the chosen item and go back to the previous screen:
 
                             val insulinCollection =
                                 Firebase.firestore.collection("users").document(USER_ID)
                                     .collection("takenMedications")
 
-                            // create a hashmap of values to be uploaded to the database
+                            // Create a hashmap of values to be uploaded to the database
                             val product = hashMapOf(
                                 "datetime" to FieldValue.serverTimestamp(),
                                 "medicationId" to selectedItem
@@ -73,8 +70,7 @@ class InsulinMedActivity : AppCompatActivity() {
                                 Intent(this@InsulinMedActivity, ListMedsActivity::class.java)
                             startActivity(backIntent)
                         }
-                    }
-                    .addOnFailureListener { exception ->
+                    }.addOnFailureListener { exception ->
                         println("Error getting documents: $exception")
                     }
             }

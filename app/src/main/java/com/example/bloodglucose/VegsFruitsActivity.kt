@@ -24,18 +24,16 @@ class VegsFruitsActivity : AppCompatActivity() {
         // Create a list of veg products
         val vegProducts = ArrayList<String>()
 
-        // make a request for basic products
-        Firebase.firestore.collection("foods")
-            .whereEqualTo("category", "vegetables and fruits").get()
-            .addOnSuccessListener { documents ->
+        // Make a request for basic products
+        Firebase.firestore.collection("foods").whereEqualTo("category", "vegetables and fruits")
+            .get().addOnSuccessListener { documents ->
 
-                // make a request for user-defined products
-                Firebase.firestore.collection("users")
-                    .document(USER_ID).collection("userAddedFoods")
-                    .whereEqualTo("category", "vegetables and fruits").get()
-                    .addOnSuccessListener { documents2 ->
+                // Make a request for user-defined products
+                Firebase.firestore.collection("users").document(USER_ID)
+                    .collection("userAddedFoods").whereEqualTo("category", "vegetables and fruits")
+                    .get().addOnSuccessListener { documents2 ->
 
-                        // save products in array
+                        // Save products in array
                         for (document in documents) {
                             val product = document.id
                             vegProducts.add(product)
@@ -62,30 +60,29 @@ class VegsFruitsActivity : AppCompatActivity() {
                             // Get the selected item
                             val selectedItem = parent.getItemAtPosition(position) as String
 
-                            // save the chosen item and go back to the previous screen:
+                            // Save the chosen item and go back to the previous screen:
 
-                            val foodsCollection = Firebase.firestore.collection("users").document(USER_ID)
-                                .collection("takenFoods")
+                            val foodsCollection =
+                                Firebase.firestore.collection("users").document(USER_ID)
+                                    .collection("takenFoods")
 
-                            // create a hashmap of values to be uploaded to the database
+                            // Create a hashmap of values to be uploaded to the database
                             val product = hashMapOf(
-                                "datetime" to FieldValue.serverTimestamp(),
-                                "foodId" to selectedItem
+                                "datetime" to FieldValue.serverTimestamp(), "foodId" to selectedItem
                             )
 
                             foodsCollection.add(product)
 
 
-                            val backIntent = Intent(this@VegsFruitsActivity, ProductActivity::class.java)
+                            val backIntent =
+                                Intent(this@VegsFruitsActivity, ProductActivity::class.java)
                             startActivity(backIntent)
 
                         }
-                    }
-                    .addOnFailureListener { exception ->
+                    }.addOnFailureListener { exception ->
                         println("Error getting documents: $exception")
                     }
-            }
-            .addOnFailureListener { exception ->
+            }.addOnFailureListener { exception ->
                 println("Error getting documents: $exception")
             }
     }

@@ -25,9 +25,7 @@ class AddMedsActivity : AppCompatActivity() {
 
         val spinner: Spinner = findViewById(R.id.spinner_add_meds)
         ArrayAdapter.createFromResource(
-            this,
-            R.array.add_med,
-            android.R.layout.simple_spinner_item
+            this, R.array.add_med, android.R.layout.simple_spinner_item
         ).also { adapter ->
             // Specify the layout to use when the list of choices appears
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -41,7 +39,7 @@ class AddMedsActivity : AppCompatActivity() {
         val submitButton: Button = findViewById(R.id.button_add_meds_submit)
 
 
-        // when the user presses "submit" button
+        // When the user presses "submit" button
         submitButton.setOnClickListener {
             var selectedMedicationType = spinner.selectedItem.toString()
             val enteredMedication = inputMedication.text.toString()
@@ -53,15 +51,14 @@ class AddMedsActivity : AppCompatActivity() {
             val ref = database.collection("users").document(USER_ID)
 
 
-            selectedMedicationType =
-                if (selectedMedicationType == "Pills") {
-                    "pills"
-                } else {
-                    "insulin"
-                }
+            selectedMedicationType = if (selectedMedicationType == "Pills") {
+                "pills"
+            } else {
+                "insulin"
+            }
 
 
-            // create a hashmap of values to be uploaded to the database
+            // Create a hashmap of values to be uploaded to the database
             val medicationItem = hashMapOf(
 
                 "category" to selectedMedicationType,
@@ -70,15 +67,12 @@ class AddMedsActivity : AppCompatActivity() {
 
 
 
-            ref.collection("userAddedMedications")
-                .document(enteredMedication)
-                .set(medicationItem)
+            ref.collection("userAddedMedications").document(enteredMedication).set(medicationItem)
                 .addOnSuccessListener { documentReference ->
                     Log.d(ContentValues.TAG, "Exercise added added with ID: ${enteredMedication}")
                     val backIntent = Intent(this@AddMedsActivity, ProductActivity::class.java)
                     startActivity(backIntent)
-                }
-                .addOnFailureListener { e ->
+                }.addOnFailureListener { e ->
                     Log.w(ContentValues.TAG, "Error adding new exercise", e)
                 }
 

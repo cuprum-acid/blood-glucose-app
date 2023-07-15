@@ -27,9 +27,7 @@ class AddProductActivity : AppCompatActivity() {
 
         val spinner: Spinner = findViewById(R.id.spinner_add_products)
         ArrayAdapter.createFromResource(
-            this,
-            R.array.add_pr,
-            android.R.layout.simple_spinner_item
+            this, R.array.add_pr, android.R.layout.simple_spinner_item
         ).also { adapter ->
             // Specify the layout to use when the list of choices appears
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -37,7 +35,7 @@ class AddProductActivity : AppCompatActivity() {
             spinner.adapter = adapter
         }
 
-        // initialize screen elements
+        // Initialize screen elements
         val inputProducts: TextInputEditText = findViewById(R.id.glucose_level_edit_text)
 
         val carbsSeekBar: SeekBar = findViewById(R.id.seekBar_carbohydrates_add_pr)
@@ -94,7 +92,7 @@ class AddProductActivity : AppCompatActivity() {
             override fun onStopTrackingTouch(seekBar: SeekBar?) {}
         })
 
-        // when the user presses "submit" button
+        // When the user presses "submit" button
         submitButton.setOnClickListener {
             var selectedProductType = spinner.selectedItem.toString()
             val enteredProduct = inputProducts.text.toString()
@@ -104,21 +102,26 @@ class AddProductActivity : AppCompatActivity() {
 
             val ref = database.collection("users").document(USER_ID)
 
-            selectedProductType =
-                if (selectedProductType == "Dairy products") {
+            selectedProductType = when (selectedProductType) {
+                "Dairy products" -> {
                     "dairy"
-                } else if (selectedProductType == "Meat and Fish") {
+                }
+                "Meat and Fish" -> {
                     "meet and fish"
-                } else if (selectedProductType == "Vegetables and Fruits") {
+                }
+                "Vegetables and Fruits" -> {
                     "vegetables and fruits"
-                } else if (selectedProductType == "Grocery") {
+                }
+                "Grocery" -> {
                     "grocery"
-                } else {
+                }
+                else -> {
                     "pastries and sweets"
                 }
+            }
 
 
-            // create a hashmap of values to be uploaded to the database
+            // Create a hashmap of values to be uploaded to the database
             val foodItem = hashMapOf(
                 "calories" to caloriesValue,
                 "carbohydrates " to carbsValue,
@@ -130,15 +133,12 @@ class AddProductActivity : AppCompatActivity() {
 
 
 
-            ref.collection("userAddedFoods")
-                .document(enteredProduct)
-                .set(foodItem)
+            ref.collection("userAddedFoods").document(enteredProduct).set(foodItem)
                 .addOnSuccessListener { documentReference ->
                     Log.d(ContentValues.TAG, "Food added added with ID: ${enteredProduct}")
                     val backIntent = Intent(this@AddProductActivity, ProductActivity::class.java)
                     startActivity(backIntent)
-                }
-                .addOnFailureListener { e ->
+                }.addOnFailureListener { e ->
                     Log.w(ContentValues.TAG, "Error adding new food", e)
                 }
 

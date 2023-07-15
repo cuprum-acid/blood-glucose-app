@@ -15,7 +15,6 @@ import com.google.firebase.ktx.Firebase
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.FieldValue
 import android.graphics.Color
-import java.text.NumberFormat
 
 
 val USER_ID = "TestUser"
@@ -38,19 +37,16 @@ class GlucoseActivity : AppCompatActivity() {
 
                 val ref = database.collection("users").document(USER_ID)
 
-                // create a hashmap of values to be uploaded to the database
+                // Create a hashmap of values to be uploaded to the database
                 val measurement = hashMapOf(
-                    "datetime" to FieldValue.serverTimestamp(),
-                    "value" to glucoseLevel
+                    "datetime" to FieldValue.serverTimestamp(), "value" to glucoseLevel
                 )
 
 
-                ref.collection("glucoseRecords")
-                    .add(measurement)
+                ref.collection("glucoseRecords").add(measurement)
                     .addOnSuccessListener { documentReference ->
                         Log.d(TAG, "Glucose_record added with ID: ${documentReference.id}")
-                    }
-                    .addOnFailureListener { e ->
+                    }.addOnFailureListener { e ->
                         Log.w(TAG, "Error adding Glucose_record", e)
                     }
 
@@ -85,9 +81,6 @@ class GlucoseActivity : AppCompatActivity() {
         return false
     }
 
-    private fun displayAlert(alert: String) {
-        binding.glucoseAlert.text = alert
-    }
 
     private fun analyzeGlucose(glucoseLevel: Int) {
         if (glucoseLevel < 4) {

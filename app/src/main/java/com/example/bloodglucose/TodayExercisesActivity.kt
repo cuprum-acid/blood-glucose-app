@@ -27,23 +27,22 @@ class TodayExercisesActivity : AppCompatActivity() {
                 val exerciseList = ArrayList<String>()
                 for (document in documents) {
                     val exerciseName = document.getString("exerciseId")
-                    val medData = document.getDate("datetime").toString().substring(0,10)
-                    val currentDate = Date().toString().substring(0,10)
+                    val medData = document.getDate("datetime").toString().substring(0, 10)
+                    val currentDate = Date().toString().substring(0, 10)
                     if (medData == currentDate && exerciseName != null) {
                         exerciseList.add(exerciseName)
                     }
                 }
 
                 val adapter = ArrayAdapter(
-                    this,
-                    android.R.layout.simple_list_item_1, // or your custom layout
+                    this, android.R.layout.simple_list_item_1, // Or your custom layout
                     exerciseList
                 )
 
-                val listView: ListView = findViewById(R.id.listView) // replace listView with your actual ListView id
+                val listView: ListView =
+                    findViewById(R.id.listView) // Replace listView with your actual ListView id
                 listView.adapter = adapter
-            }
-            .addOnFailureListener { exception ->
+            }.addOnFailureListener { exception ->
                 println("Error getting documents: $exception")
             }
     }

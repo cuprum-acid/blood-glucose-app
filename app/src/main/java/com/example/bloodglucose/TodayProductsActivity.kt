@@ -47,8 +47,8 @@ class TodayProductsActivity : AppCompatActivity() {
                 var pending = documents.size()
                 for (document in documents) {
                     val foodName = document.getString("foodId")
-                    val medData = document.getDate("datetime").toString().substring(0,10)
-                    val currentDate = Date().toString().substring(0,10)
+                    val medData = document.getDate("datetime").toString().substring(0, 10)
+                    val currentDate = Date().toString().substring(0, 10)
 
                     if (medData == currentDate && foodName != null) {
                         foodList.add(foodName)
@@ -61,14 +61,13 @@ class TodayProductsActivity : AppCompatActivity() {
                                     documentFood.getDouble("fats") ?: 0.0,
                                     documentFood.getDouble("carbohydrates") ?: 0.0,
                                     documentFood.getDouble("calories") ?: 0.0,
-                                    (documentFood.getDouble("carbohydrates") ?: 0.0)/11,
+                                    (documentFood.getDouble("carbohydrates") ?: 0.0) / 11,
                                 )
 
                                 allFoods.add(foodProteins)
                                 pending--
                                 checkPending(pending, foodList, allFoods)
-                            }
-                            .addOnFailureListener { exception ->
+                            }.addOnFailureListener { exception ->
                                 println("Error getting documents: $exception")
                                 pending--
                                 checkPending(pending, foodList, allFoods)
@@ -78,19 +77,25 @@ class TodayProductsActivity : AppCompatActivity() {
                         checkPending(pending, foodList, allFoods)
                     }
                 }
-            }
-            .addOnFailureListener { exception ->
+            }.addOnFailureListener { exception ->
                 println("Error getting documents: $exception")
             }
     }
 
-    private fun checkPending(pending: Int, foodList: ArrayList<String>, allFoods: ArrayList<Tuple6<String, Double, Double, Double, Double, Double>>) {
-        if (pending == 0) { // all requests have returned a result
+    private fun checkPending(
+        pending: Int,
+        foodList: ArrayList<String>,
+        allFoods: ArrayList<Tuple6<String, Double, Double, Double, Double, Double>>
+    ) {
+        if (pending == 0) { // All requests have returned a result
             updateUI(foodList, allFoods)
         }
     }
 
-    private fun updateUI(foodList: ArrayList<String>, allFoods: ArrayList<Tuple6<String, Double, Double, Double, Double, Double>>) {
+    private fun updateUI(
+        foodList: ArrayList<String>,
+        allFoods: ArrayList<Tuple6<String, Double, Double, Double, Double, Double>>
+    ) {
         val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, foodList)
         listView.adapter = adapter
 
