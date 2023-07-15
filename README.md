@@ -1,7 +1,9 @@
 # Blood Glucose 🩸
+<img src="images/BG.png" 
+width="100" hspace="10" vspace="10" style="margin-right: 10px;">
 
-<img src="images/BG.png" align="left"
-width="100" hspace="10" vspace="10">
+
+
 
 ## Description
 
@@ -12,7 +14,7 @@ The app allows to add blood sugar data and monitor one's condition on graphs and
 
 ### Gif
 
-<img src="images/demo.gif" style="display: block; margin: auto; width: 300px">
+<img src="images/demo.gif" width="300" style="display: block; margin: auto;">
 
 ### Screenshots
 
