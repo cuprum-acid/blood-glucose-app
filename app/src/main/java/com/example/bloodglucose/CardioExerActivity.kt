@@ -21,13 +21,12 @@ class CardioExerActivity : AppCompatActivity() {
             startActivity(backIntent)
         }
         val cardioEx = ArrayList<String>()
-        Firebase.firestore.collection("exercises")
-            .whereEqualTo("category", "cardio").get().addOnSuccessListener { exercises ->
+        Firebase.firestore.collection("exercises").whereEqualTo("category", "cardio").get()
+            .addOnSuccessListener { exercises ->
 
-                // make a request for user-defined exercises
-                Firebase.firestore.collection("users")
-                    .document(USER_ID).collection("userAddedExercises")
-                    .whereEqualTo("category", "cardio").get()
+                // Make a request for user-defined exercises
+                Firebase.firestore.collection("users").document(USER_ID)
+                    .collection("userAddedExercises").whereEqualTo("category", "cardio").get()
                     .addOnSuccessListener { exercises2 ->
 
                         for (exercise in exercises) {
@@ -43,8 +42,7 @@ class CardioExerActivity : AppCompatActivity() {
 
                         val listView: ListView = findViewById(R.id.listView)
                         val arrayAdapter = ArrayAdapter(
-                            this, android.R.layout.simple_list_item_1,
-                            cardioEx
+                            this, android.R.layout.simple_list_item_1, cardioEx
                         )
                         listView.adapter = arrayAdapter
 
@@ -54,13 +52,13 @@ class CardioExerActivity : AppCompatActivity() {
                             // Get the selected item
                             val selectedItem = parent.getItemAtPosition(position) as String
 
-                            // save the chosen item and go back to the previous screen:
+                            // Save the chosen item and go back to the previous screen:
 
                             val exerciseCollection =
                                 Firebase.firestore.collection("users").document(USER_ID)
                                     .collection("takenExercises")
 
-                            // create a hashmap of values to be uploaded to the database
+                            // Create a hashmap of values to be uploaded to the database
                             val product = hashMapOf(
                                 "datetime" to FieldValue.serverTimestamp(),
                                 "exerciseId" to selectedItem
@@ -69,15 +67,12 @@ class CardioExerActivity : AppCompatActivity() {
                             exerciseCollection.add(product)
 
 
-                            val backIntent =
-                                Intent(
-                                    this@CardioExerActivity,
-                                    ListExercisesActivity::class.java
-                                )
+                            val backIntent = Intent(
+                                this@CardioExerActivity, ListExercisesActivity::class.java
+                            )
                             startActivity(backIntent)
                         }
-                    }
-                    .addOnFailureListener { exception ->
+                    }.addOnFailureListener { exception ->
                         println("Error getting documents: $exception")
 
                     }

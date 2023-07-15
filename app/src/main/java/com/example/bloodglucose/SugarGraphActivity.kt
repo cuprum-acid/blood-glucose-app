@@ -53,83 +53,85 @@ class SugarGraphActivity : AppCompatActivity() {
 
         val glucoseDataPoints = ArrayList<DataPoint>()
 
-        db.collection("glucoseRecords")
-            .get()
-            .addOnSuccessListener { documents ->
-                for (document in documents) {
-                    val value = document.getLong("value")?.toInt()
-                    val datetime = document.getDate("datetime")
-                    if (value != null && datetime != null) {
-                        glucoseDataPoints.add(DataPoint(datetime, value))
-                    }
-                    println(value)
+        db.collection("glucoseRecords").get().addOnSuccessListener { documents ->
+            for (document in documents) {
+                val value = document.getLong("value")?.toInt()
+                val datetime = document.getDate("datetime")
+                if (value != null && datetime != null) {
+                    glucoseDataPoints.add(DataPoint(datetime, value))
                 }
+                println(value)
+            }
 
-                val grouped = glucoseDataPoints.groupBy { it.dateOnly }
-                var averageDataPoints = grouped.map { (date, dataPoints) ->
-                    val average = dataPoints.map { it.value }.average()
-                    DataPoint(date, average.toInt())
-                }
+            val grouped = glucoseDataPoints.groupBy { it.dateOnly }
+            var averageDataPoints = grouped.map { (date, dataPoints) ->
+                val average = dataPoints.map { it.value }.average()
+                DataPoint(date, average.toInt())
+            }
 
-                averageDataPoints = averageDataPoints.sortedBy { it.datetime }
+            averageDataPoints = averageDataPoints.sortedBy { it.datetime }
 
-                val entries = averageDataPoints.mapIndexed { index, dataPoint ->
-                    Entry(index.toFloat(), dataPoint.value.toFloat())
-                }
+            val entries = averageDataPoints.mapIndexed { index, dataPoint ->
+                Entry(index.toFloat(), dataPoint.value.toFloat())
+            }
 
-                val dataSet = LineDataSet(entries, "Average Sugar Level")
-                val lineData = LineData(dataSet)
+            val dataSet = LineDataSet(entries, "Average Sugar Level")
+            val lineData = LineData(dataSet)
 
-                chart.data = lineData
+            chart.data = lineData
 
-                val formatter = object : ValueFormatter() {
-                    private val dateFormat = SimpleDateFormat("MM-dd", Locale.US) // Customize this format to your needs
+            val formatter = object : ValueFormatter() {
+                private val dateFormat =
+                    SimpleDateFormat("MM-dd", Locale.US) // Customize this format to your needs
 
-                    override fun getAxisLabel(value: Float, axis: AxisBase?): String {
-                        val index = value.toInt()
-                        return if (index < averageDataPoints.size) {
-                            dateFormat.format(averageDataPoints[index].datetime)
-                        } else {
-                            "" // Return an empty string for out-of-bounds index
-                        }
+                override fun getAxisLabel(value: Float, axis: AxisBase?): String {
+                    val index = value.toInt()
+                    return if (index < averageDataPoints.size) {
+                        dateFormat.format(averageDataPoints[index].datetime)
+                    } else {
+                        "" // Return an empty string for out-of-bounds index
                     }
-                }
-
-                chart.xAxis.valueFormatter = formatter
-                chart.invalidate() // Refresh the chart
-
-                exportButton.setOnClickListener {
-                    // Convert data to CSV string
-                    val csvHeader = "Date, Average Sugar Level\n"
-                    val csvValues = averageDataPoints.joinToString(separator = "\n") { dataPoint ->
-                        "\"${SimpleDateFormat("MM-dd-yyyy", Locale.US).format(dataPoint.datetime)}\", ${dataPoint.value}"
-                    }
-                    val csvData = csvHeader + csvValues
-
-                    // Save the CSV data to a file
-                    val directory = getExternalFilesDir(null)
-                    val file = File(directory, "export.csv")
-                    FileOutputStream(file).bufferedWriter().use { it.write(csvData) }
-
-
-                    println("packageName $packageName")
-                    // Create a URI for the file using FileProvider, and grant URI permissions to the receiver
-                    val fileUri = FileProvider.getUriForFile(this, "$packageName.fileprovider", file)
-                    val sendIntent = Intent().apply {
-                        action = Intent.ACTION_SEND
-                        putExtra(Intent.EXTRA_STREAM, fileUri)
-                        type = "text/csv"
-                        addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
-                    }
-
-                    // Create a chooser and start the activity
-                    val chooserIntent = Intent.createChooser(sendIntent, "Share CSV via")
-                    startActivity(chooserIntent)
                 }
             }
-            .addOnFailureListener { exception ->
-                println("Error getting documents: $exception")
+
+            chart.xAxis.valueFormatter = formatter
+            chart.invalidate() // Refresh the chart
+
+            exportButton.setOnClickListener {
+                // Convert data to CSV string
+                val csvHeader = "Date, Average Sugar Level\n"
+                val csvValues = averageDataPoints.joinToString(separator = "\n") { dataPoint ->
+                    "\"${
+                        SimpleDateFormat(
+                            "MM-dd-yyyy", Locale.US
+                        ).format(dataPoint.datetime)
+                    }\", ${dataPoint.value}"
+                }
+                val csvData = csvHeader + csvValues
+
+                // Save the CSV data to a file
+                val directory = getExternalFilesDir(null)
+                val file = File(directory, "export.csv")
+                FileOutputStream(file).bufferedWriter().use { it.write(csvData) }
+
+
+                println("packageName $packageName")
+                // Create a URI for the file using FileProvider, and grant URI permissions to the receiver
+                val fileUri = FileProvider.getUriForFile(this, "$packageName.fileprovider", file)
+                val sendIntent = Intent().apply {
+                    action = Intent.ACTION_SEND
+                    putExtra(Intent.EXTRA_STREAM, fileUri)
+                    type = "text/csv"
+                    addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+                }
+
+                // Create a chooser and start the activity
+                val chooserIntent = Intent.createChooser(sendIntent, "Share CSV via")
+                startActivity(chooserIntent)
             }
+        }.addOnFailureListener { exception ->
+            println("Error getting documents: $exception")
+        }
     }
 
 }

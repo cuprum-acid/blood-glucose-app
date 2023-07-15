@@ -24,18 +24,16 @@ class DairyActivity : AppCompatActivity() {
         // Create a list of dairy products
         val dairyProducts = ArrayList<String>()
 
-        // make a request for basic products
-        Firebase.firestore.collection("foods")
-            .whereEqualTo("category", "dairy").get()
+        // Make a request for basic products
+        Firebase.firestore.collection("foods").whereEqualTo("category", "dairy").get()
             .addOnSuccessListener { documents ->
 
-                // make a request for user-defined products
-                Firebase.firestore.collection("users")
-                    .document(USER_ID).collection("userAddedFoods")
-                    .whereEqualTo("category", "dairy").get()
+                // Make a request for user-defined products
+                Firebase.firestore.collection("users").document(USER_ID)
+                    .collection("userAddedFoods").whereEqualTo("category", "dairy").get()
                     .addOnSuccessListener { documents2 ->
 
-                        // save products in array
+                        // Save products in array
                         for (document in documents) {
                             val product = document.id
                             dairyProducts.add(product)
@@ -62,16 +60,15 @@ class DairyActivity : AppCompatActivity() {
                             // Get the selected item
                             val selectedItem = parent.getItemAtPosition(position) as String
 
-                            // save the chosen item and go back to the previous screen:
+                            // Save the chosen item and go back to the previous screen:
 
                             val foodsCollection =
                                 Firebase.firestore.collection("users").document(USER_ID)
                                     .collection("takenFoods")
 
-                            // create a hashmap of values to be uploaded to the database
+                            // Create a hashmap of values to be uploaded to the database
                             val product = hashMapOf(
-                                "datetime" to FieldValue.serverTimestamp(),
-                                "foodId" to selectedItem
+                                "datetime" to FieldValue.serverTimestamp(), "foodId" to selectedItem
                             )
 
                             foodsCollection.add(product)
@@ -81,12 +78,10 @@ class DairyActivity : AppCompatActivity() {
                             startActivity(backIntent)
 
                         }
-                    }
-                    .addOnFailureListener { exception ->
+                    }.addOnFailureListener { exception ->
                         println("Error getting documents: $exception")
                     }
-            }
-            .addOnFailureListener { exception ->
+            }.addOnFailureListener { exception ->
                 println("Error getting documents: $exception")
             }
 
