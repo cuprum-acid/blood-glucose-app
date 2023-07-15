@@ -1,4 +1,4 @@
-package com.example.mytestapp
+package com.example.bloodglucose
 
 // A generic tuple of size 5
 data class Tuple6<A, B, C, D, E, F>(
