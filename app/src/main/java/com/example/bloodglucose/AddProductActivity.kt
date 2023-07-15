@@ -102,16 +102,22 @@ class AddProductActivity : AppCompatActivity() {
 
             val ref = database.collection("users").document(USER_ID)
 
-            selectedProductType = if (selectedProductType == "Dairy products") {
-                "dairy"
-            } else if (selectedProductType == "Meat and Fish") {
-                "meet and fish"
-            } else if (selectedProductType == "Vegetables and Fruits") {
-                "vegetables and fruits"
-            } else if (selectedProductType == "Grocery") {
-                "grocery"
-            } else {
-                "pastries and sweets"
+            selectedProductType = when (selectedProductType) {
+                "Dairy products" -> {
+                    "dairy"
+                }
+                "Meat and Fish" -> {
+                    "meet and fish"
+                }
+                "Vegetables and Fruits" -> {
+                    "vegetables and fruits"
+                }
+                "Grocery" -> {
+                    "grocery"
+                }
+                else -> {
+                    "pastries and sweets"
+                }
             }
 
 

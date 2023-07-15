@@ -68,12 +68,16 @@ class AddExerciseActivity : AppCompatActivity() {
 
             val ref = database.collection("users").document(USER_ID)
 
-            selectedProductType = if (selectedProductType == "Power exercises") {
-                "power"
-            } else if (selectedProductType == "Static exercises") {
-                "static"
-            } else {
-                "cardio"
+            selectedProductType = when (selectedProductType) {
+                "Power exercises" -> {
+                    "power"
+                }
+                "Static exercises" -> {
+                    "static"
+                }
+                else -> {
+                    "cardio"
+                }
             }
 
             // Create a hashmap of values to be uploaded to the database
