@@ -70,7 +70,7 @@ class AddMedsActivity : AppCompatActivity() {
             ref.collection("userAddedMedications").document(enteredMedication).set(medicationItem)
                 .addOnSuccessListener { documentReference ->
                     Log.d(ContentValues.TAG, "Exercise added added with ID: ${enteredMedication}")
-                    val backIntent = Intent(this@AddMedsActivity, ProductActivity::class.java)
+                    val backIntent = Intent(this@AddMedsActivity, ListMedsActivity::class.java)
                     startActivity(backIntent)
                 }.addOnFailureListener { e ->
                     Log.w(ContentValues.TAG, "Error adding new exercise", e)
